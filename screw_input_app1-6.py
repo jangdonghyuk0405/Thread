@@ -7,7 +7,7 @@ import re
 class ScrewInputApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("나사 자동 입력 프로그램 (드래그로 이동 가능)")
+        self.root.title("automatic screw input program")
         self.root.geometry("800x900")
         self.root.resizable(True, True)  # 창 크기 조정 가능
         self.root.minsize(700, 800)  # 최소 크기 설정
