@@ -53,7 +53,7 @@ class ScrewInputApp:
             "1/2-28 UNEF-2B", "11/16-24 UNEF-2B", "4-40 UNC-2B", "6-32 UNC-2B", "5/16-18 UNC-2B",
             
             "4-40 UNC-2A", "6-32 UNC-2A", "6-40 UNF-2A", "8-56 UNS-3A", "1/4-20 UNC-2A",
-            "1/4-28 UNF-2A", "9/32-40 UNS-2A", "3/8-32 UNEF-2A", "11/16-24 UNEF-2A"
+            "1/4-28 UNF-2A", "9/32-40 UNS-2A", "3/8-32 UNEF-2A', '11/16-24 UNEF-2A"
         ]
         self.inventory = set()
         for transform_name in raw_inventory_list:
@@ -200,6 +200,16 @@ class ScrewInputApp:
                                      font=("맑은 고딕", 9), foreground="gray")
         self.status_label.pack(pady=(10, 5))
         
+        # in 치수 출력 버튼
+        button_frame_inch = ttk.Frame(main_frame)
+        button_frame_inch.pack(fill=tk.X, pady=(0, 5))
+        
+        self.btn_normal_inch = ttk.Button(button_frame_inch, text="일반게이지 in 치수 출력", command=self.copy_normal_inch)
+        self.btn_normal_inch.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(0, 5))
+        
+        self.btn_before_plating_inch = ttk.Button(button_frame_inch, text="도금 전 게이지 in 치수 출력", command=self.copy_before_plating_inch)
+        self.btn_before_plating_inch.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(5, 0))
+
         # 제작자 표시 (오른쪽 하단)
         author_label = ttk.Label(main_frame, text="제작자 : 장동혁", font=("맑은 고딕", 9), foreground="gray")
         author_label.pack(side=tk.BOTTOM, anchor=tk.SE, padx=0, pady=(0, 0))
@@ -210,7 +220,7 @@ class ScrewInputApp:
         
         # 출력 결과를 표시할 Text 위젯
         self.output_text = tk.Text(output_frame, font=("맑은 고딕", 11), 
-                                   wrap=tk.WORD, height=8, state=tk.DISABLED)
+                                   wrap=tk.WORD, height=5, state=tk.DISABLED)
         self.output_text.pack(fill=tk.BOTH, expand=True)
         
         # 스크롤바 추가
@@ -224,39 +234,25 @@ class ScrewInputApp:
         # 외경나사 데이터 - 일반게이지 (OUTER 타입)
         outer_screw_list_normal = [
             # 나사이름, Major Min, Major Max, Pitch Min, Pitch Max, Minor Min (없으면 None), Minor Max
-            ("1/4-36 UNS-2A", "6.188", "6.327", "5.792", "5.869", None, "5.461"),
-            ("8-64 UNS-2A", "4.054", "4.417", "3.833", "3.891", "3.577", "3.718"),
-            ("3/8-24 UNF-2A", "9.315", "9.497", "8.713", "8.808", None, "8.237"),
-            ("10-32 UNF-2A", "4.644", "4.792", "4.199", "4.267", None, "3.820"),
-            ("10-36 UNS-2A", "4.664", "4.803", "4.270", "4.345", None, "3.962"),
-            ("12-56 UNS-2A", "5.365", "5.468", "5.111", "5.173", None, "4.930"),
-            ("5-44 UNF-2A", "3.036", "3.157", "2.718", "2.781", None, "2.468"),
-            ("10-56 UNS-2A", "4.705", "4.808", "4.451", "4.513", None, "4.269"),
-            ("1-72 UNF-2A", "1.750", "1.839", "1.562", "1.611", None, "1.419"),
-            ("4-48 UNF-2A", "2.713", "2.627", "2.424", "2.484", None, "2.176"),
-            ("10-48 UNS-2A", "4.692", "4.805", "4.397", "4.462", None, "4.155"),
-            ("10-32 UNF-2A", "4.651", "4.803", "4.212", "4.287", None, "3.830"),
-            ("2-56 UNC-2A", "2.055", "2.153", "1.801", "1.844", None, "1.597"),
-            ("8-36 UNF-2A", "4.005", "4.145", "3.616", "3.688", None, "3.304"),
-            ("7/16-28 UNEF-2A", "10.920", "11.084", "10.404", "10.495", None, "9.748"),
-            ("1/2-28 UNEF-2A", "12.507", "12.672", "11.989", "12.082", None, "11.559"),
-            ("3-56 UNF-2A", "2.392", "2.497", "2.146", "2.203", None, "1.958"),
-            ("0-80 UNF-2A", "1.430", "1.511", "1.260", "1.305", None, "1.133"),
-            ("1/4-18 UNEF-2A", "31.490", "31.711", "30.670", "30.794", None, "30.032"),
-            ("5/16-32 UNEF-2A", "7.760", "7.912", "7.316", "7.396", None, "6.967"),
-            ("5/8-24 UNEF-2A", "15.661", "15.845", "15.055", "15.156", None, "14.584"),
-            ("5/16-36 UNS-2A", "7.774", "7.914", "7.378", "7.457", None, "7.073"),
-            ("9/16-24 UNEF-2A", "14.074", "14.257", "13.469", "13.568", None, "12.997"),
-            ("12-48 UNS-2A", "5.351", "5.466", "5.057", "5.123", None, "4.836"),
-            ("4-40 UNC-2A", "2.695", "2.845", "2.433", "2.517", "2.156", "2.385"),
-            ("6-32 UNC-2A", "3.332", "3.505", "2.990", "3.084", "2.642", "2.896"), 
-            ("6-40 UNF-2A", "3.356", "3.505", "3.094", "3.180", "2.819", "3.023"),
-            ("8-56 UNS-3A", "4.000", "4.166", "3.871", "3.932", "3.683", "3.785"),
-            ("1/4-20 UNC-2A", "6.160", "6.350", "5.525", "5.649", "4.978", "5.258"),
-            ("1/4-28 UNF-2A", "6.185", "6.350", "5.761", "5.870", "5.359", "5.588"),
-            ("9/32-40 UNS-2A", "6.980", "7.142", "6.731", "6.828", "6.452", "6.604"),
-            ("3/8-32 UNEF-2A", "9.363", "9.525", "9.009", "9.121", "8.661", "8.865"),
-            ("11/16-24 UNEF-2A", "17.290", "17.463", "16.774", "16.906", "16.307", "16.561"),
+            ('1/4-36 UNS-2A', '6.188', '6.327', '5.792', '5.869', None, '5.461'),
+            ('10-32 UNF-2A', '4.644', '4.792', '4.199', '4.267', None, '3.820'),
+            ('4-48 UNF-2A', '2.713', '2.627', '2.424', '2.484', None, '2.176'),
+            ('10-48 UNS-2A', '4.692', '4.805', '4.397', '4.462', None, '4.155'),
+            ('10-32 UNF-2A', '4.651', '4.803', '4.212', '4.287', None, '3.830'),
+            ('2-56 UNC-2A', '2.055', '2.153', '1.801', '1.844', None, '1.597'),
+            ('7/16-28 UNEF-2A', '10.920', '11.084', '10.404', '10.495', None, '9.748'),
+            ('1/2-28 UNEF-2A', '12.507', '12.672', '11.989', '12.082', None, '11.559'),
+            ('5/16-32 UNEF-2A', '7.760', '7.912', '7.316', '7.396', None, '6.967'),
+            ('5/8-24 UNEF-2A', '15.661', '15.845', '15.055', '15.156', None, '14.584'),
+            ('4-40 UNC-2A', '2.695', '2.845', '2.433', '2.517', '2.156', '2.385'),
+            ('6-32 UNC-2A', '3.332', '3.505', '2.990', '3.084', '2.642', '2.896'),
+            ('6-40 UNF-2A', '3.356', '3.505', '3.094', '3.180', '2.819', '3.023'),
+            ('8-56 UNS-3A', '4.000', '4.166', '3.871', '3.932', '3.683', '3.785'),
+            ('1/4-20 UNC-2A', '6.160', '6.350', '5.525', '5.649', '4.978', '5.258'),
+            ('1/4-28 UNF-2A', '6.185', '6.350', '5.761', '5.870', '5.359', '5.588'),
+            ('9/32-40 UNS-2A', '6.980', '7.142', '6.731', '6.828', '6.452', '6.604'),
+            ('3/8-32 UNEF-2A', '9.363', '9.525', '9.009', '9.121', '8.661', '8.865'),
+            ('11/16-24 UNEF-2A', '17.290', '17.463', '16.774', '16.906', '16.307', '16.561'),
         ]
         
         # 그 외 고객사 - 일반게이지 - 외경나사 데이터 (OUTER 타입)
@@ -322,42 +318,34 @@ class ScrewInputApp:
         # 외경나사 데이터 - 도금 전 게이지 (OUTER 타입)
         outer_screw_list_before_plating = [
             # 나사이름, Major Min, Major Max, Pitch Min, Pitch Max, Minor Min (없으면 None), Minor Max
-            ("1/4-36 UNS-2A", "6.185", "6.314", "5.787", "5.844", None, "5.448"),
-            ("10-56 UNS-2A", "4.703", "4.753", "4.449", "4.479", None, "4.266"),
-            ("3/8-32 UNEF-2A", "9.332", "9.476", "8.868", "8.938", None, "8.503"),
-            ("5/8-24 UNEF-2A", "15.647", "15.821", "15.025", "15.110", None, "14.523"),
-            ("10-32 UNF-2A", "4.644", "4.792", "4.199", "4.267", None, "3.820"),
-            ("000-120 UNS-2A", "0.826", "0.840", "0.674", "0.703", None, None),
-            ("4-40 UNC-2A", "2.685", "2.809", "2.330", "2.382", None, "2.029"),
-            ("6-40 UNF-2A", "3.348", "3.474", "2.995", "3.053", None, "2.694"),
-            ("7/16-28 UNEF-2A", "10.905", "11.061", "10.374", "10.449", None, "9.949"),
-            ("1/2-28 UNEF-2A", "12.492", "12.649", "11.959", "12.037", None, "11.536"),
-            ("0-80 UNF-2A", "1.430", "1.511", "1.260", "1.305", None, "1.133"),
-            ("2-56 UNC-2A", "2.055", "2.153", "1.801", "1.844", None, "1.597"),
-            ("5/16-32 UNEF-2A", "7.753", "7.901", "7.303", "7.376", None, "6.929"),
-            ("8-64 UNS-2A", "4.044", "4.142", "3.813", "3.881", "3.666", "3.713"),
-            ("12-36 UNS-2A", "5.317", "5.448", "4.923", "4.991", None, "4.617"),
-            ("10-36 UNS-2A", "4.664", "4.803", "4.270", "4.345", None, "3.962"),
-            ("11/16-24 UNEF-2A", "17.234", "17.409", "16.612", "16.697", None, "16.111"),
-            ("9/16-24 UNEF-2A", "14.074", "14.257", "13.469", "13.568", None, "12.997"),
-            ("5/16-18 UNF-2A", "7.907", "7.686", "6.990", "6.888", None, "6.225"),
-            ("2-56 UNC-2A", "2.055", "2.154", "1.801", "1.844", None, "1.598"),
-            ("4-40 UNC-2A", "2.685", "2.809", "2.330", "2.383", None, "2.029"),
-            ("4-48 UNF-2A", "2.703", "2.812", "2.403", "2.454", None, "2.162"),
-            ("6-32 UNC-2A", "3.325", "3.475", "2.885", "2.949", None, "2.502"),
-            ("6-40 UNF-2A", "3.348", "3.475", "2.995", "3.053", None, "2.695"),
-            ("8-56 UNS-3A", "4.034", "4.183", "3.802", "3.840", None, "3.627"),
-            ("10-48 UNS-2A", "4.661", "4.796", "4.384", "4.442", None, "4.145"),
-            ("1/4-20 UNC-2A", "6.002", "6.307", "5.334", "5.466", None, "4.750"),
-            ("1/4-28 UNF-2A", "6.066", "6.309", "5.588", "5.705", None, "5.197"),
-            ("1/4-36 UNS-2A", "6.185", "6.314", "5.786", "5.845", None, "5.448"),
-            ("9/32-40 UNS-2A", "6.988", "7.107", "6.627", "6.683", None, "6.330"),
-            ("5/16-32 UNEF-2A", "7.752", "7.902", "7.303", "7.376", None, "6.929"),
-            ("3/8-32 UNEF-2A", "9.332", "9.477", "8.867", "8.938", None, "8.504"),
-            ("7/16-28 UNEF-2A", "10.904", "11.062", "10.373", "10.449", None, "9.949"),
-            ("1/2-28 UNEF-2A", "12.492", "12.649", "11.958", "12.035", None, "11.537"),
-            ("5/8-24 UNEF-2A", "15.646", "15.822", "15.024", "15.110", None, "14.524"),
-            ("11/16-24 UNEF-2A", "17.234", "17.409", "16.612", "16.698", None, "16.111"),
+            ('1/4-36 UNS-2A', '6.185', '6.314', '5.787', '5.844', None, '5.448'),
+            ('3/8-32 UNEF-2A', '9.332', '9.476', '8.868', '8.938', None, '8.503'),
+            ('5/8-24 UNEF-2A', '15.647', '15.821', '15.025', '15.110', None, '14.523'),
+            ('10-32 UNF-2A', '4.644', '4.792', '4.199', '4.267', None, '3.820'),
+            ('4-40 UNC-2A', '2.685', '2.809', '2.330', '2.382', None, '2.029'),
+            ('6-40 UNF-2A', '3.348', '3.474', '2.995', '3.053', None, '2.694'),
+            ('7/16-28 UNEF-2A', '10.905', '11.061', '10.374', '10.449', None, '9.949'),
+            ('1/2-28 UNEF-2A', '12.492', '12.649', '11.959', '12.037', None, '11.536'),
+            ('2-56 UNC-2A', '2.055', '2.153', '1.801', '1.844', None, '1.597'),
+            ('5/16-32 UNEF-2A', '7.753', '7.901', '7.303', '7.376', None, '6.929'),
+            ('11/16-24 UNEF-2A', '17.234', '17.409', '16.612', '16.697', None, '16.111'),
+            ('2-56 UNC-2A', '2.055', '2.154', '1.801', '1.844', None, '1.598'),
+            ('4-40 UNC-2A', '2.685', '2.809', '2.330', '2.383', None, '2.029'),
+            ('4-48 UNF-2A', '2.703', '2.812', '2.403', '2.454', None, '2.162'),
+            ('6-32 UNC-2A', '3.325', '3.475', '2.885', '2.949', None, '2.502'),
+            ('6-40 UNF-2A', '3.348', '3.475', '2.995', '3.053', None, '2.695'),
+            ('8-56 UNS-3A', '4.034', '4.183', '3.802', '3.840', None, '3.627'),
+            ('10-48 UNS-2A', '4.661', '4.796', '4.384', '4.442', None, '4.145'),
+            ('1/4-20 UNC-2A', '6.002', '6.307', '5.334', '5.466', None, '4.750'),
+            ('1/4-28 UNF-2A', '6.066', '6.309', '5.588', '5.705', None, '5.197'),
+            ('1/4-36 UNS-2A', '6.185', '6.314', '5.786', '5.845', None, '5.448'),
+            ('9/32-40 UNS-2A', '6.988', '7.107', '6.627', '6.683', None, '6.330'),
+            ('5/16-32 UNEF-2A', '7.752', '7.902', '7.303', '7.376', None, '6.929'),
+            ('3/8-32 UNEF-2A', '9.332', '9.477', '8.867', '8.938', None, '8.504'),
+            ('7/16-28 UNEF-2A', '10.904', '11.062', '10.373', '10.449', None, '9.949'),
+            ('1/2-28 UNEF-2A', '12.492', '12.649', '11.958', '12.035', None, '11.537'),
+            ('5/8-24 UNEF-2A', '15.646', '15.822', '15.024', '15.110', None, '14.524'),
+            ('11/16-24 UNEF-2A', '17.234', '17.409', '16.612', '16.698', None, '16.111'),
         ]
         
         # 내경나사 데이터 - 일반게이지 (INNER 타입)
@@ -448,31 +436,26 @@ class ScrewInputApp:
         # 내경나사 데이터 - 도금 전 게이지 (INNER 타입)
         inner_screw_list_before_plating = [
             # 나사이름, Minor Min, Minor Max, Pitch Min, Pitch Max, Major Min
-            ("1/4-36 UNS-2B", "5.601", "5.742", "5.919", "5.999", "6.363"),
-            ("10-36 UNS-2B", "4.064", "4.217", "4.368", "4.445", "4.826"),
-            ("4-40 UNC-2B", "2.172", "2.395", "2.464", "2.537", "2.861"),
-            ("2-56 UNC-2B", "1.710", "1.882", "1.921", "1.981", "2.200"),
-            ("7/16-28 UNEF-2B", "10.158", "10.172", "10.569", "10.670", "11.136"),
-            ("5/16-32 UNEF-2B", "7.097", "7.272", "7.443", "7.541", "7.948"),
-            ("6-40 UNF-2B", "2.830", "3.030", "3.115", "3.192", "3.516"),
-            ("1/2-28 UNEF-2B", "11.733", "11.953", "12.157", "12.263", "12.723"),
-            ("11/16-24 UNEF-2B", "16.330", "16.576", "16.820", "16.885", "17.488"),
-            ("6-32 UNC-2B", "2.652", "2.903", "3.010", "3.096", "3.516"),
-            ("5/8-24 UNEF-2B", "14.732", "14.986", "15.187", "15.318", "15.875"),
-            ("1-72 UNF-2B", "1.473", "1.612", "1.625", "1.689", "1.854"),
-            ("10-32 UNF-2B", "3.972", "4.173", "4.330", "4.422", "4.836"),
-            ("12-56 UNS-2B", "5.003", "5.105", "5.191", "5.273", "5.486"),
-            ("3/8-32 UNEF-2B", "8.685", "8.879", "9.506", "9.151", "9.547"),
-            ("4-48 UNF-2A", "2.286", "2.477", "2.532", "2.601", "2.860"),
-            ("8-56 UNS-3B", "3.698", "3.795", "3.901", "3.952", "4.181"),
-            ("10-48 UNS-2B", "4.252", "4.376", "4.503", "4.582", "4.836"),
-            ("1/4-28 UNF-2B", "5.375", "5.598", "5.791", "5.890", "6.365"),
-            ("9/32-40 UNS-2B", "6.464", "6.607", "6.756", "6.833", "7.155"),
-            ("1/4-36 UNS-2B", "5.588", "5.740", "5.893", "5.994", "6.350"),
-            ("5/16-18 UNC-2B", "6.402", "6.731", "7.022", "7.155", "7.939"),
-            ("10-36 UNS-2B", "4.064", "4.216", "4.369", "4.487", "4.826"),
-            ("7/16-28 UNEF-2B", "10.135", "10.337", "10.524", "10.640", "11.113"),
-            ("0-80 UNF-2B", "1.181", "1.306", "1.318", "1.377", "1.524"),
+            ('1/4-36 UNS-2B', '5.601', '5.742', '5.919', '5.999', '6.363'),
+            ('10-36 UNS-2B', '4.064', '4.217', '4.368', '4.445', '4.826'),
+            ('4-40 UNC-2B', '2.172', '2.395', '2.464', '2.537', '2.861'),
+            ('2-56 UNC-2B', '1.710', '1.882', '1.921', '1.981', '2.200'),
+            ('7/16-28 UNEF-2B', '10.158', '10.172', '10.569', '10.670', '11.136'),
+            ('5/16-32 UNEF-2B', '7.097', '7.272', '7.443', '7.541', '7.948'),
+            ('6-40 UNF-2B', '2.830', '3.030', '3.115', '3.192', '3.516'),
+            ('1/2-28 UNEF-2B', '11.733', '11.953', '12.157', '12.263', '12.723'),
+            ('11/16-24 UNEF-2B', '16.330', '16.576', '16.820', '16.885', '17.488'),
+            ('6-32 UNC-2B', '2.652', '2.903', '3.010', '3.096', '3.516'),
+            ('5/8-24 UNEF-2B', '14.732', '14.986', '15.187', '15.318', '15.875'),
+            ('10-32 UNF-2B', '3.972', '4.173', '4.330', '4.422', '4.836'),
+            ('3/8-32 UNEF-2B', '8.685', '8.879', '9.506', '9.151', '9.547'),
+            ('4-48 UNF-2A', '2.286', '2.477', '2.532', '2.601', '2.860'),
+            ('8-56 UNS-3B', '3.698', '3.795', '3.901', '3.952', '4.181'),
+            ('10-48 UNS-2B', '4.252', '4.376', '4.503', '4.582', '4.836'),
+            ('1/4-28 UNF-2B', '5.375', '5.598', '5.791', '5.890', '6.365'),
+            ('9/32-40 UNS-2B', '6.464', '6.607', '6.756', '6.833', '7.155'),
+            ('1/4-36 UNS-2B', '5.588', '5.740', '5.893', '5.994', '6.350'),
+            ('7/16-28 UNEF-2B', '10.135', '10.337', '10.524', '10.640', '11.113'),
         ]
         
         # 외경나사 데이터 처리 - 일반게이지
@@ -687,7 +670,7 @@ class ScrewInputApp:
         allowed = False
         if customer == "SM" and gauge in ("NORMAL", "BEFORE_PLATING"):
             allowed = True
-        elif customer == "OTHER" and gauge in ("NORMAL", "BEFORE_PLATING"):
+        elif customer == "OTHER" and gauge in ("NORMAL', 'BEFORE_PLATING"):
             allowed = True
         
         if not allowed:
@@ -816,7 +799,7 @@ class ScrewInputApp:
         allowed = False
         if customer == "SM" and gauge in ("NORMAL", "BEFORE_PLATING"):
             allowed = True  # SM 일반/도금전 둘 다 허용
-        elif customer == "OTHER" and gauge in ("NORMAL", "BEFORE_PLATING"):
+        elif customer == "OTHER" and gauge in ("NORMAL', 'BEFORE_PLATING"):
             allowed = True  # 그외 고객사 일반/도금전 둘 다 허용
         
         if not allowed:
@@ -1162,7 +1145,7 @@ class ScrewInputApp:
             messagebox.showinfo("확인 결과", "보유중인 나사 게이지 입니다.")
         else:
             self.inventory_status_label.config(text="미보유 게이지 (X)", foreground="red")
-            messagebox.showwarning("확인 결과", "보유중이지 않은 나사 게이지 입니다.")
+            messagebox.showwarning("확인 결과', '보유중이지 않은 나사 게이지 입니다.")
     
     def copy_to_clipboard(self):
         """나사 이름을 지정된 형식으로 클립보드에 복사"""
@@ -1270,6 +1253,232 @@ class ScrewInputApp:
         self.root.geometry(f"+{x}+{y}")
         self.start_x = event.x_root
         self.start_y = event.y_root
+
+    def convert_mm_to_inch(self, value_mm_str):
+        """mm 값을 inch로 변환 (문자열 입력 -> 문자열 출력, 소수점 5자리 반올림)"""
+        if not value_mm_str:
+            return None
+        try:
+            val_mm = float(value_mm_str)
+            val_inch = val_mm / 25.4
+            # 소수점 4자리까지 표시 (일반적으로 in 치수는 4자리 많이 사용, 요청에 따라 조정 가능. 여기선 5자리로 함)
+            return f"{val_inch:.5f}".rstrip('0').rstrip('.')
+        except (ValueError, TypeError):
+            return None
+
+    def format_value_inch(self, value_dict, label, screw_type=None):
+        """값 딕셔너리를 inch로 변환하여 포맷팅"""
+        if not value_dict or not isinstance(value_dict, dict):
+            return None
+            
+        min_val_mm = value_dict.get('min')
+        max_val_mm = value_dict.get('max')
+        
+        min_val_inch = self.convert_mm_to_inch(min_val_mm)
+        max_val_inch = self.convert_mm_to_inch(max_val_mm)
+        
+        # 요청 접미사 처리 (기존 로직과 동일)
+        suffix = ""
+        if label == "Minor" and screw_type == "OUTER":
+            suffix = " Max."
+        if label == "Major" and screw_type == "INNER":
+            suffix = " Min."
+        
+        # Min/Max 출력
+        if min_val_inch and max_val_inch:
+            return f"{label} : {min_val_inch}\" ~ {max_val_inch}\""
+        elif max_val_inch:
+            return f"{label} : {max_val_inch}\"{suffix}"
+        elif min_val_inch:
+            return f"{label} : {min_val_inch}\"{suffix}"
+        
+        return None
+
+    def copy_normal_inch(self):
+        """일반게이지 in 치수 출력"""
+        screw_name = self.screw_name_entry.get().strip()
+        screw_type = self.screw_type_var.get()
+        
+        if not screw_name or not screw_type:
+             self.status_label.config(text="상태: 나사 이름과 종류를 입력하세요", foreground="orange")
+             return
+
+        # 일반 게이지 데이터 강제 조회
+        actual_screw_name = self.find_screw_name(screw_name, screw_type)
+        if not actual_screw_name or actual_screw_name not in self.screw_data:
+             self.status_label.config(text="상태: 데이터를 찾을 수 없습니다", foreground="orange")
+             return
+             
+        data_list = self.screw_data[actual_screw_name]
+        target_data = None
+        
+        # 일반 게이지 데이터 찾기
+        for data in data_list:
+            if data.get('type') == screw_type and data.get('gauge') == 'NORMAL':
+                # SM 데이터우선, 없으면 아무거나
+                if data.get('customer') == 'SM':
+                    target_data = data
+                    break
+                if not target_data:
+                     target_data = data
+        
+        if not target_data:
+             self.status_label.config(text="상태: 일반 게이지 데이터를 찾을 수 없습니다", foreground="orange")
+             return
+             
+        # 포맷팅
+        formatted_text = self.format_screw_text_inch(screw_name, target_data, actual_screw_name, "NORMAL")
+        
+        # 복사 및 출력
+        self.output_text.config(state=tk.NORMAL)
+        self.output_text.delete(1.0, tk.END)
+        self.output_text.insert(1.0, formatted_text)
+        self.output_text.config(state=tk.DISABLED)
+        
+        pyperclip.copy(formatted_text)
+        messagebox.showinfo("복사 완료', '복사되었습니다!")
+
+    def copy_before_plating_inch(self):
+        """도금 전 게이지 in 치수 출력"""
+        screw_name = self.screw_name_entry.get().strip()
+        screw_type = self.screw_type_var.get()
+        customer = self.customer_var.get() # SM or OTHER
+        
+        if not screw_name or not screw_type:
+             self.status_label.config(text="상태: 나사 이름과 종류를 입력하세요", foreground="orange")
+             return
+             
+        actual_screw_name = self.find_screw_name(screw_name, screw_type)
+        if not actual_screw_name or actual_screw_name not in self.screw_data:
+             self.status_label.config(text="상태: 데이터를 찾을 수 없습니다", foreground="orange")
+             return
+             
+        data_list = self.screw_data[actual_screw_name]
+        target_data = None
+        
+        if customer == 'SM':
+            for data in data_list:
+                if data.get('type') == screw_type and data.get('gauge') == 'BEFORE_PLATING' and data.get('customer', 'SM') == 'SM':
+                    target_data = data
+                    break
+            if not target_data:
+                 self.status_label.config(text="상태: SM 도금 전 게이지 데이터를 찾을 수 없습니다", foreground="orange")
+                 return
+        else: # OTHER
+            # 일반 게이지 데이터 찾아서 계산
+             base_data = None
+             for data in data_list:
+                if data.get('type') == screw_type and data.get('gauge') == 'NORMAL':
+                     # OTHER 우선 확인 (있다면)
+                     if data.get('customer') == 'OTHER':
+                         base_data = data
+                         break
+                     if not base_data:
+                         base_data = data # SM 데이터라도 있으면 그것 사용
+            
+             if not base_data:
+                  self.status_label.config(text="상태: 계산을 위한 일반 게이지 데이터를 찾을 수 없습니다", foreground="orange")
+                  return
+
+             # 도금 값 계산 적용
+             plating_value_str = self.plating_value_var.get().strip()
+             plating_value_um = None
+             if plating_value_str:
+                 try:
+                     plating_value_um = float(plating_value_str)
+                 except:
+                     pass
+             
+             new_data = base_data.copy()
+             # 각 항목별 계산 (MM 단위로 계산됨)
+             if 'major' in new_data:
+                  new_data['major'] = self.apply_plating_value(new_data['major'], screw_type, plating_value_um)
+             if 'pitch' in new_data:
+                  new_data['pitch'] = self.apply_plating_value(new_data['pitch'], screw_type, plating_value_um)
+             if 'minor' in new_data:
+                  new_data['minor'] = self.apply_plating_value(new_data['minor'], screw_type, plating_value_um)
+             
+             target_data = new_data
+
+        # 포맷팅
+        formatted_text = self.format_screw_text_inch(screw_name, target_data, actual_screw_name, "BEFORE_PLATING")
+        
+        # 복사 및 출력
+        self.output_text.config(state=tk.NORMAL)
+        self.output_text.delete(1.0, tk.END)
+        self.output_text.insert(1.0, formatted_text)
+        self.output_text.config(state=tk.DISABLED)
+        
+        pyperclip.copy(formatted_text)
+        messagebox.showinfo("복사 완료', '복사되었습니다!")
+
+    def format_screw_text_inch(self, screw_name, specs, actual_screw_name, gauge_mode):
+        """inch 단위로 텍스트 포맷팅"""
+        lines = []
+        
+        # 이름
+        if actual_screw_name:
+            display_name = actual_screw_name
+        else:
+             if specs and specs.get('type') == 'OUTER':
+                if '-2A' not in screw_name.upper() and '-2B' not in screw_name.upper():
+                    display_name = f"{screw_name}-2A"
+                else:
+                    display_name = screw_name
+             elif specs and specs.get('type') == 'INNER':
+                if '-2A' not in screw_name.upper() and '-2B' not in screw_name.upper():
+                    display_name = f"{screw_name}-2B"
+                else:
+                    display_name = screw_name
+             else:
+                display_name = screw_name
+        
+        lines.append(display_name)
+        
+        # 게이지 정보
+        if gauge_mode == "BEFORE_PLATING":
+            lines.append("(도금 전 게이지 사용)")
+        elif gauge_mode == "NORMAL":
+            lines.append("(일반 게이지 사용)")
+            
+        if specs:
+            screw_type = specs.get('type', '')
+            
+            # 항목 순서
+            if screw_type == 'OUTER':
+                if 'major' in specs:
+                    txt = self.format_value_inch(specs['major'], "Major", screw_type)
+                    if txt: lines.append(txt)
+                if 'pitch' in specs:
+                    txt = self.format_value_inch(specs['pitch'], "Pitch", screw_type)
+                    if txt: lines.append(txt)
+                if 'minor' in specs and specs['minor']:
+                    txt = self.format_value_inch(specs['minor'], "Minor", screw_type)
+                    if txt: lines.append(txt)
+                    
+            elif screw_type == 'INNER':
+                if 'minor' in specs:
+                    txt = self.format_value_inch(specs['minor'], "Minor", screw_type)
+                    if txt: lines.append(txt)
+                if 'pitch' in specs:
+                    txt = self.format_value_inch(specs['pitch'], "Pitch", screw_type)
+                    if txt: lines.append(txt)
+                if 'major' in specs and specs['major']:
+                    txt = self.format_value_inch(specs['major'], "Major", screw_type)
+                    if txt: lines.append(txt)
+            else:
+                 # 기본
+                if 'minor' in specs:
+                    txt = self.format_value_inch(specs['minor'], "Minor", None)
+                    if txt: lines.append(txt)
+                if 'pitch' in specs:
+                    txt = self.format_value_inch(specs['pitch'], "Pitch", None)
+                    if txt: lines.append(txt)
+                if 'major' in specs:
+                    txt = self.format_value_inch(specs['major'], "Major", None)
+                    if txt: lines.append(txt)
+                    
+        return '\n'.join(lines)
 
 def run_program():
     root = tk.Tk()
