@@ -200,6 +200,10 @@ class ScrewInputApp:
                                      font=("맑은 고딕", 9), foreground="gray")
         self.status_label.pack(pady=(10, 5))
         
+        # 제작자 표시 (오른쪽 하단)
+        author_label = ttk.Label(main_frame, text="제작자 : 장동혁", font=("맑은 고딕", 9), foreground="gray")
+        author_label.pack(side=tk.BOTTOM, anchor=tk.SE, padx=0, pady=(0, 0))
+
         # 나사 출력 결과 표시 섹션
         output_frame = ttk.LabelFrame(main_frame, text="나사 출력 결과", padding="10")
         output_frame.pack(fill=tk.BOTH, expand=True, pady=(0, 10))
