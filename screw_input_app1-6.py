@@ -70,7 +70,7 @@ class ScrewInputApp:
         title_frame = ttk.Frame(main_frame)
         title_frame.pack(fill=tk.X, pady=(0, 20))
         
-        title_label = ttk.Label(title_frame, text="나사 자동 입력 프로그램", 
+        title_label = ttk.Label(title_frame, text="automatic screw input program", 
                                font=("맑은 고딕", 16, "bold"))
         title_label.pack(side=tk.LEFT)
         
