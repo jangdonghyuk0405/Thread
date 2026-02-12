@@ -3,6 +3,7 @@ from tkinter import ttk, messagebox
 import pyperclip
 import re
 
+
 class ScrewInputApp:
     def __init__(self, root):
         self.root = root
@@ -1266,11 +1267,11 @@ class ScrewInputApp:
         self.start_x = event.x_root
         self.start_y = event.y_root
 
-def main():
+def run_program():
     root = tk.Tk()
-    app = ScrewInputApp(root)
+    ScrewInputApp(root)  # app 변수 할당 제거 (사용되지 않음)
     root.mainloop()
 
 if __name__ == "__main__":
-    main()
+    run_program()
 
