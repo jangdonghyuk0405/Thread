@@ -2,6 +2,8 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 import pyperclip
 import re
+import json
+import os
 
 
 class ScrewInputApp:
@@ -124,7 +126,13 @@ class ScrewInputApp:
         self.convert_button = ttk.Button(button_frame, text="변환", 
                                          command=self.copy_to_clipboard,
                                          width=20)
-        self.convert_button.pack()
+        self.convert_button.pack(side=tk.LEFT, padx=(0, 5))
+        
+        # 나사 추가 버튼
+        self.add_screw_button = ttk.Button(button_frame, text="나사 추가", 
+                                           command=self.open_add_screw_window,
+                                           width=20)
+        self.add_screw_button.pack(side=tk.LEFT)
         
         # --------------------------------------------------------------------------
         # 옵션 선택 & 비고 (통합 프레임) - 회색 박스(LabelFrame) 제거
@@ -227,32 +235,141 @@ class ScrewInputApp:
         scrollbar = ttk.Scrollbar(output_frame, orient=tk.VERTICAL, command=self.output_text.yview)
         scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
         self.output_text.config(yscrollcommand=scrollbar.set)
+
+    def open_add_screw_window(self):
+        """나사 추가 창 열기"""
+        add_window = tk.Toplevel(self.root)
+        add_window.title("나사 데이터 추가")
+        add_window.geometry("400x600")
+        
+        # 나사 이름
+        ttk.Label(add_window, text="나사 이름 (예: M4X0.7):").pack(pady=(10, 0))
+        name_entry = ttk.Entry(add_window)
+        name_entry.pack(pady=(0, 10))
+        
+        # 라디오 버튼 변수들
+        new_customer_var = tk.StringVar(value="SM")
+        new_type_var = tk.StringVar(value="OUTER")
+        new_gauge_var = tk.StringVar(value="NORMAL")
+        
+        # 옵션 프레임
+        options_frame = ttk.LabelFrame(add_window, text="옵션", padding=10)
+        options_frame.pack(fill=tk.X, padx=10, pady=5)
+        
+        ttk.Label(options_frame, text="고객사:").grid(row=0, column=0, sticky="w", pady=2)
+        ttk.Radiobutton(options_frame, text="SM", variable=new_customer_var, value="SM").grid(row=0, column=1, padx=5)
+        ttk.Radiobutton(options_frame, text="그외", variable=new_customer_var, value="OTHER").grid(row=0, column=2, padx=5)
+        
+        ttk.Label(options_frame, text="종류:").grid(row=1, column=0, sticky="w", pady=2)
+        ttk.Radiobutton(options_frame, text="외경", variable=new_type_var, value="OUTER").grid(row=1, column=1, padx=5)
+        ttk.Radiobutton(options_frame, text="내경", variable=new_type_var, value="INNER").grid(row=1, column=2, padx=5)
+        
+        ttk.Label(options_frame, text="게이지:").grid(row=2, column=0, sticky="w", pady=2)
+        ttk.Radiobutton(options_frame, text="일반", variable=new_gauge_var, value="NORMAL").grid(row=2, column=1, padx=5)
+        ttk.Radiobutton(options_frame, text="도금전", variable=new_gauge_var, value="BEFORE_PLATING").grid(row=2, column=2, padx=5)
+        
+        # 치수 입력 프레임
+        dims_frame = ttk.LabelFrame(add_window, text="치수 입력 (mm)", padding=10)
+        dims_frame.pack(fill=tk.X, padx=10, pady=5)
+        
+        entries = {}
+        row = 0
+        for dim in ["Major", "Pitch", "Minor"]:
+            ttk.Label(dims_frame, text=dim).grid(row=row, column=0, pady=5)
+            ttk.Label(dims_frame, text="Min:").grid(row=row, column=1)
+            min_entry = ttk.Entry(dims_frame, width=10)
+            min_entry.grid(row=row, column=2, padx=5)
+            
+            ttk.Label(dims_frame, text="Max:").grid(row=row, column=3)
+            max_entry = ttk.Entry(dims_frame, width=10)
+            max_entry.grid(row=row, column=4, padx=5)
+            
+            entries[dim] = (min_entry, max_entry)
+            row += 1
+
+        def save_new_screw():
+            name = name_entry.get().strip()
+            if not name:
+                messagebox.showerror("오류", "나사 이름을 입력해주세요.")
+                return
+                
+            # 데이터 구성
+            new_data = {
+                'type': new_type_var.get(),
+                'gauge': new_gauge_var.get(),
+                'customer': new_customer_var.get()
+            }
+            
+            has_data = False
+            for dim, (min_e, max_e) in entries.items():
+                min_val = min_e.get().strip()
+                max_val = max_e.get().strip()
+                dim_key = dim.lower()
+                
+                dim_data = {}
+                if min_val: dim_data['min'] = min_val
+                if max_val: dim_data['max'] = max_val
+                
+                if dim_data:
+                    new_data[dim_key] = dim_data
+                    has_data = True
+            
+            if not has_data:
+                 if not messagebox.askyesno("경고", "입력된 치수 데이터가 없습니다. 그래도 저장하시겠습니까?"):
+                     return
+
+            # 중복 체크
+            if name in self.screw_data:
+                msg = f"'{name}' 나사가 이미 존재합니다.\n추가하시겠습니까?"
+                if not messagebox.askyesno("중복 확인", msg):
+                    return
+            
+            # 데이터 저장
+            if name not in self.screw_data:
+                self.screw_data[name] = []
+            self.screw_data[name].append(new_data)
+            
+            self.save_screw_data()
+            messagebox.showinfo("성공", f"'{name}' 데이터가 저장되었습니다.")
+            add_window.destroy()
+            
+            # 리스트박스 업데이트
+            self.update_screw_listbox()
+        
+        ttk.Button(add_window, text="저장", command=save_new_screw).pack(pady=20)
     
     def init_screw_data(self):
         """SM/그 외 고객사, 외경나사/내경나사, 일반게이지/도금 전 게이지 데이터 초기화"""
+        # JSON 파일이 있으면 로드
+        if os.path.exists("screw_data.json"):
+            try:
+                with open("screw_data.json", "r", encoding="utf-8") as f:
+                    self.screw_data = json.load(f)
+                return
+            except Exception as e:
+                messagebox.showerror("Error", f"데이터 로드 중 오류 발생: {e}\n기본값으로 초기화합니다.")
         
         # 외경나사 데이터 - 일반게이지 (OUTER 타입)
         outer_screw_list_normal = [
-            # 나사이름, Major Min, Major Max, Pitch Min, Pitch Max, Minor Min (없으면 None), Minor Max
-            ('1/4-36 UNS-2A', '6.188', '6.327', '5.792', '5.869', None, '5.461'),
-            ('10-32 UNF-2A', '4.644', '4.792', '4.199', '4.267', None, '3.820'),
-            ('4-48 UNF-2A', '2.713', '2.627', '2.424', '2.484', None, '2.176'),
-            ('10-48 UNS-2A', '4.692', '4.805', '4.397', '4.462', None, '4.155'),
-            ('10-32 UNF-2A', '4.651', '4.803', '4.212', '4.287', None, '3.830'),
-            ('2-56 UNC-2A', '2.055', '2.153', '1.801', '1.844', None, '1.597'),
-            ('7/16-28 UNEF-2A', '10.920', '11.084', '10.404', '10.495', None, '9.748'),
-            ('1/2-28 UNEF-2A', '12.507', '12.672', '11.989', '12.082', None, '11.559'),
-            ('5/16-32 UNEF-2A', '7.760', '7.912', '7.316', '7.396', None, '6.967'),
-            ('5/8-24 UNEF-2A', '15.661', '15.845', '15.055', '15.156', None, '14.584'),
-            ('4-40 UNC-2A', '2.695', '2.845', '2.433', '2.517', '2.156', '2.385'),
-            ('6-32 UNC-2A', '3.332', '3.505', '2.990', '3.084', '2.642', '2.896'),
-            ('6-40 UNF-2A', '3.356', '3.505', '3.094', '3.180', '2.819', '3.023'),
-            ('8-56 UNS-3A', '4.000', '4.166', '3.871', '3.932', '3.683', '3.785'),
-            ('1/4-20 UNC-2A', '6.160', '6.350', '5.525', '5.649', '4.978', '5.258'),
-            ('1/4-28 UNF-2A', '6.185', '6.350', '5.761', '5.870', '5.359', '5.588'),
-            ('9/32-40 UNS-2A', '6.980', '7.142', '6.731', '6.828', '6.452', '6.604'),
-            ('3/8-32 UNEF-2A', '9.363', '9.525', '9.009', '9.121', '8.661', '8.865'),
-            ('11/16-24 UNEF-2A', '17.290', '17.463', '16.774', '16.906', '16.307', '16.561'),
+            # 나사이름, Major Min, Major Max, Pitch Min, Pitch Max, Minor Min (없으면 None), Minor Max, Major Min(in), Major Max(in), Pitch Min(in), Pitch Max(in), Minor Min(in), Minor Max(in)
+            ('2-56 UNC-2A', '2.055', '2.153', '1.801', '1.844', None, '1.597', '.0813', '.0854', '.0717', '.0738', None, '.0635'),
+            ('4-40 UNC-2A', '2.695', '2.845', '2.433', '2.517', '2.156', '2.385', '.1061', '.1112', '.0925', '.0950', '.0805', '.0815'),
+            ('4-48 UNF-2A', '2.713', '2.627', '2.424', '2.484', None, '2.176', '.1068', '.1113', '.0954', '.0978', None, '.0857'),
+            ('6-32 UNC-2A', '3.332', '3.505', '2.990', '3.084', '2.642', '2.896', '.1312', '.1372', '.1141', '.1169', None, '.0989'),
+            ('6-40 UNF-2A', '3.356', '3.505', '3.094', '3.180', '2.819', '3.023', '.1321', '.1372', '.1184', '.1210', None, '.1065'),
+            ('8-56 UNS-3A', '4.000', '4.166', '3.871', '3.932', '3.683', '3.785', '.1592', '.1653', '.1505', '.1524', None, '.1434'),
+            ('10-32 UNF-2A', '4.644', '4.792', '4.199', '4.267', None, '3.820', '.1831', '.1891', '.1658', '.1688', None, '.1508'),
+            ('10-48 UNS-2A', '4.692', '4.805', '4.397', '4.462', None, '4.155', '.1847', '.1892', '.1731', '.1757', None, '.1636'),
+            ('1/4-20 UNC-2A', '6.160', '6.350', '5.525', '5.649', '4.978', '5.258', '.2408', '.2489', '.2127', '.2164', None, '.1876'),
+            ('1/4-28 UNF-2A', '6.185', '6.350', '5.761', '5.870', '5.359', '5.588', '.2425', '.2490', '.2225', '.2258', None, '.2052'),
+            ('1/4-36 UNS-2A', '6.188', '6.327', '5.792', '5.869', None, '5.461', '.2436', '.2491', '.2280', '.2311', None, '.2150'),
+            ('9/32-40 UNS-2A', '6.980', '7.142', '6.731', '6.828', '6.452', '6.604', '.2752', '.2803', '.2611', '.2641', None, '.2497'),
+            ('5/16-32 UNEF-2A', '7.760', '7.912', '7.316', '7.396', None, '6.967', '.3055', '.3115', '.2880', '.2912', None, '.2732'),
+            ('3/8-32 UNEF-2A', '9.363', '9.525', '9.009', '9.121', '8.661', '8.865', '.3680', '.3740', '.3503', '.3537', None, '.3357'),
+            ('7/16-28 UNEF-2A', '10.920', '11.084', '10.404', '10.495', None, '9.748', '.4299', '.4364', '.4096', '.4132', None, '.3926'),
+            ('1/2-28 UNEF-2A', '12.507', '12.672', '11.989', '12.082', None, '11.559', '.4924', '.4989', '.4720', '.4757', None, '.4551'),
+            ('5/8-24 UNEF-2A', '15.661', '15.845', '15.055', '15.156', None, '14.584', '.6166', '.6238', '.5927', '.5967', None, '.5727'),
+            ('11/16-24 UNEF-2A', '17.290', '17.463', '16.774', '16.906', '16.307', '16.561', '.6791', '.6863', '.6552', '.6592', None, '.6352'),
         ]
         
         # 그 외 고객사 - 일반게이지 - 외경나사 데이터 (OUTER 타입)
@@ -317,35 +434,25 @@ class ScrewInputApp:
         
         # 외경나사 데이터 - 도금 전 게이지 (OUTER 타입)
         outer_screw_list_before_plating = [
-            # 나사이름, Major Min, Major Max, Pitch Min, Pitch Max, Minor Min (없으면 None), Minor Max
-            ('1/4-36 UNS-2A', '6.185', '6.314', '5.787', '5.844', None, '5.448'),
-            ('3/8-32 UNEF-2A', '9.332', '9.476', '8.868', '8.938', None, '8.503'),
-            ('5/8-24 UNEF-2A', '15.647', '15.821', '15.025', '15.110', None, '14.523'),
-            ('10-32 UNF-2A', '4.644', '4.792', '4.199', '4.267', None, '3.820'),
-            ('4-40 UNC-2A', '2.685', '2.809', '2.330', '2.382', None, '2.029'),
-            ('6-40 UNF-2A', '3.348', '3.474', '2.995', '3.053', None, '2.694'),
-            ('7/16-28 UNEF-2A', '10.905', '11.061', '10.374', '10.449', None, '9.949'),
-            ('1/2-28 UNEF-2A', '12.492', '12.649', '11.959', '12.037', None, '11.536'),
-            ('2-56 UNC-2A', '2.055', '2.153', '1.801', '1.844', None, '1.597'),
-            ('5/16-32 UNEF-2A', '7.753', '7.901', '7.303', '7.376', None, '6.929'),
-            ('11/16-24 UNEF-2A', '17.234', '17.409', '16.612', '16.697', None, '16.111'),
-            ('2-56 UNC-2A', '2.055', '2.154', '1.801', '1.844', None, '1.598'),
-            ('4-40 UNC-2A', '2.685', '2.809', '2.330', '2.383', None, '2.029'),
-            ('4-48 UNF-2A', '2.703', '2.812', '2.403', '2.454', None, '2.162'),
-            ('6-32 UNC-2A', '3.325', '3.475', '2.885', '2.949', None, '2.502'),
-            ('6-40 UNF-2A', '3.348', '3.475', '2.995', '3.053', None, '2.695'),
-            ('8-56 UNS-3A', '4.034', '4.183', '3.802', '3.840', None, '3.627'),
-            ('10-48 UNS-2A', '4.661', '4.796', '4.384', '4.442', None, '4.145'),
-            ('1/4-20 UNC-2A', '6.002', '6.307', '5.334', '5.466', None, '4.750'),
-            ('1/4-28 UNF-2A', '6.066', '6.309', '5.588', '5.705', None, '5.197'),
-            ('1/4-36 UNS-2A', '6.185', '6.314', '5.786', '5.845', None, '5.448'),
-            ('9/32-40 UNS-2A', '6.988', '7.107', '6.627', '6.683', None, '6.330'),
-            ('5/16-32 UNEF-2A', '7.752', '7.902', '7.303', '7.376', None, '6.929'),
-            ('3/8-32 UNEF-2A', '9.332', '9.477', '8.867', '8.938', None, '8.504'),
-            ('7/16-28 UNEF-2A', '10.904', '11.062', '10.373', '10.449', None, '9.949'),
-            ('1/2-28 UNEF-2A', '12.492', '12.649', '11.958', '12.035', None, '11.537'),
-            ('5/8-24 UNEF-2A', '15.646', '15.822', '15.024', '15.110', None, '14.524'),
-            ('11/16-24 UNEF-2A', '17.234', '17.409', '16.612', '16.698', None, '16.111'),
+            # 나사이름, Major Min, Major Max, Pitch Min, Pitch Max, Minor Min (없으면 None), Minor Max, Major Min(in), Major Max(in), Pitch Min(in), Pitch Max(in), Minor Min(in), Minor Max(in)
+            ('2-56 UNC-2A', '2.055', '2.153', '1.801', '1.844', None, '1.597', '.0809', '.0848', '.0709', '.0726', None, '.0629'),
+            ('4-40 UNC-2A', '2.685', '2.809', '2.330', '2.382', None, '2.029', '.1057', '.1106', '.0917', '.0938', None, '.0799'),
+            ('4-48 UNF-2A', '2.703', '2.812', '2.403', '2.454', None, '2.162', '.1064', '.1107', '.0946', '.0966', None, '.0851'),
+            ('6-32 UNC-2A', '3.325', '3.475', '2.885', '2.949', None, '2.502', '.1309', '.1368', '.1136', '.1161', None, '.0985'),
+            ('6-40 UNF-2A', '3.348', '3.475', '2.995', '3.053', None, '2.695', '.1318', '.1368', '.1179', '.1202', None, '.1061'),
+            ('8-56 UNS-3A', '4.034', '4.183', '3.802', '3.840', None, '3.627', '.1588', '.1647', '.1497', '.1512', None, '.1428'),
+            ('10-32 UNF-2A', '4.644', '4.792', '4.199', '4.267', None, '3.820', '.1828', '.1887', '.1653', '.1680', None, '.1504'),
+            ('10-48 UNS-2A', '4.661', '4.796', '4.384', '4.442', None, '4.145', '.1844', '.1888', '.1726', '.1749', None, '.1632'),
+            ('1/4-20 UNC-2A', '6.002', '6.307', '5.334', '5.466', None, '4.750', '.2363', '.2483', '.2100', '.2152', None, '.1870'),
+            ('1/4-28 UNF-2A', '6.066', '6.309', '5.588', '5.705', None, '5.197', '.2388', '.2484', '.2200', '.2246', None, '.2046'),
+            ('1/4-36 UNS-2A', '6.185', '6.314', '5.787', '5.844', None, '5.448', '.2435', '.2486', '.2278', '.2301', None, '.2145'),
+            ('9/32-40 UNS-2A', '6.988', '7.107', '6.627', '6.683', None, '6.330', '.2751', '.2798', '.2609', '.2631', None, '.2492'),
+            ('5/16-32 UNEF-2A', '7.753', '7.901', '7.303', '7.376', None, '6.929', '.3052', '.3111', '.2875', '.2904', None, '.2728'),
+            ('3/8-32 UNEF-2A', '9.332', '9.477', '8.867', '8.938', None, '8.504', '.3674', '.3731', '.3491', '.3519', None, '.3348'),
+            ('7/16-28 UNEF-2A', '10.904', '11.062', '10.373', '10.449', None, '9.949', '.4293', '.4355', '.4084', '.4114', None, '.3917'),
+            ('1/2-28 UNEF-2A', '12.492', '12.649', '11.958', '12.035', None, '11.537', '.4918', '.4980', '.4708', '.4739', None, '.4542'),
+            ('5/8-24 UNEF-2A', '15.646', '15.822', '15.024', '15.110', None, '14.524', '.6160', '.6229', '.5915', '.5949', None, '.5718'),
+            ('11/16-24 UNEF-2A', '17.234', '17.409', '16.612', '16.698', None, '16.111', '.6785', '.6854', '.6540', '.6574', None, '.6343'),
         ]
         
         # 내경나사 데이터 - 일반게이지 (INNER 타입)
@@ -459,7 +566,7 @@ class ScrewInputApp:
         ]
         
         # 외경나사 데이터 처리 - 일반게이지
-        for name, major_min, major_max, pitch_min, pitch_max, minor_min, minor_max in outer_screw_list_normal:
+        for name, major_min, major_max, pitch_min, pitch_max, minor_min, minor_max, maj_min_in, maj_max_in, pit_min_in, pit_max_in, min_min_in, min_max_in in outer_screw_list_normal:
             data = {'type': 'OUTER', 'gauge': 'NORMAL'}
             
             # Major 데이터
@@ -470,6 +577,11 @@ class ScrewInputApp:
             elif major_max:
                 data['major'] = {'max': major_max}
             
+            if maj_min_in or maj_max_in:
+                if 'major' not in data: data['major'] = {}
+                if maj_min_in: data['major']['min_inch'] = maj_min_in
+                if maj_max_in: data['major']['max_inch'] = maj_max_in
+            
             # Pitch 데이터
             if pitch_min and pitch_max:
                 data['pitch'] = {'min': pitch_min, 'max': pitch_max}
@@ -477,6 +589,11 @@ class ScrewInputApp:
                 data['pitch'] = {'min': pitch_min}
             elif pitch_max:
                 data['pitch'] = {'max': pitch_max}
+
+            if pit_min_in or pit_max_in:
+                if 'pitch' not in data: data['pitch'] = {}
+                if pit_min_in: data['pitch']['min_inch'] = pit_min_in
+                if pit_max_in: data['pitch']['max_inch'] = pit_max_in
             
             # Minor 데이터
             if minor_min and minor_max:
@@ -486,13 +603,18 @@ class ScrewInputApp:
             elif minor_max:
                 data['minor'] = {'max': minor_max}
             
+            if min_min_in or min_max_in:
+                if 'minor' not in data: data['minor'] = {}
+                if min_min_in: data['minor']['min_inch'] = min_min_in
+                if min_max_in: data['minor']['max_inch'] = min_max_in
+            
             # 같은 이름이 여러 게이지에 있을 수 있으므로 리스트로 저장
             if name not in self.screw_data:
                 self.screw_data[name] = []
             self.screw_data[name].append(data)
         
         # 외경나사 데이터 처리 - 도금 전 게이지
-        for name, major_min, major_max, pitch_min, pitch_max, minor_min, minor_max in outer_screw_list_before_plating:
+        for name, major_min, major_max, pitch_min, pitch_max, minor_min, minor_max, maj_min_in, maj_max_in, pit_min_in, pit_max_in, min_min_in, min_max_in in outer_screw_list_before_plating:
             data = {'type': 'OUTER', 'gauge': 'BEFORE_PLATING'}
             
             # Major 데이터
@@ -503,6 +625,11 @@ class ScrewInputApp:
             elif major_max:
                 data['major'] = {'max': major_max}
             
+            if maj_min_in or maj_max_in:
+                if 'major' not in data: data['major'] = {}
+                if maj_min_in: data['major']['min_inch'] = maj_min_in
+                if maj_max_in: data['major']['max_inch'] = maj_max_in
+
             # Pitch 데이터
             if pitch_min and pitch_max:
                 data['pitch'] = {'min': pitch_min, 'max': pitch_max}
@@ -511,6 +638,11 @@ class ScrewInputApp:
             elif pitch_max:
                 data['pitch'] = {'max': pitch_max}
             
+            if pit_min_in or pit_max_in:
+                if 'pitch' not in data: data['pitch'] = {}
+                if pit_min_in: data['pitch']['min_inch'] = pit_min_in
+                if pit_max_in: data['pitch']['max_inch'] = pit_max_in
+
             # Minor 데이터
             if minor_min and minor_max:
                 data['minor'] = {'min': minor_min, 'max': minor_max}
@@ -518,6 +650,11 @@ class ScrewInputApp:
                 data['minor'] = {'min': minor_min}
             elif minor_max:
                 data['minor'] = {'max': minor_max}
+
+            if min_min_in or min_max_in:
+                if 'minor' not in data: data['minor'] = {}
+                if min_min_in: data['minor']['min_inch'] = min_min_in
+                if min_max_in: data['minor']['max_inch'] = min_max_in
             
             # 같은 이름이 여러 게이지에 있을 수 있으므로 리스트로 저장
             if name not in self.screw_data:
@@ -641,9 +778,21 @@ class ScrewInputApp:
                 data['major'] = {'min': major_min}
             
             # 같은 이름이 여러 게이지에 있을 수 있으므로 리스트로 저장
+        # 같은 이름이 여러 게이지에 있을 수 있으므로 리스트로 저장
             if name not in self.screw_data:
                 self.screw_data[name] = []
             self.screw_data[name].append(data)
+        
+        # 초기화된 데이터 저장
+        self.save_screw_data()
+
+    def save_screw_data(self):
+        """현재 나사 데이터를 JSON 파일로 저장"""
+        try:
+            with open("screw_data.json", "w", encoding="utf-8") as f:
+                json.dump(self.screw_data, f, indent=4, ensure_ascii=False)
+        except Exception as e:
+            messagebox.showerror("Error", f"데이터 저장 중 오류 발생: {e}")
     
     def normalize_screw_name(self, name):
         """나사 이름 정규화 (-2A, -2B 제거, # 제거)"""
@@ -1271,11 +1420,14 @@ class ScrewInputApp:
         if not value_dict or not isinstance(value_dict, dict):
             return None
             
-        min_val_mm = value_dict.get('min')
-        max_val_mm = value_dict.get('max')
-        
-        min_val_inch = self.convert_mm_to_inch(min_val_mm)
-        max_val_inch = self.convert_mm_to_inch(max_val_mm)
+        # 저장된 inch 값 확인 (SM 외부 나사 등 정밀 값 있는 경우 우선 사용)
+        min_val_inch = value_dict.get('min_inch')
+        if not min_val_inch:
+            min_val_inch = self.convert_mm_to_inch(value_dict.get('min'))
+            
+        max_val_inch = value_dict.get('max_inch')
+        if not max_val_inch:
+            max_val_inch = self.convert_mm_to_inch(value_dict.get('max'))
         
         # 요청 접미사 처리 (기존 로직과 동일)
         suffix = ""

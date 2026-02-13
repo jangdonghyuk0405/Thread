@@ -1,0 +1,3252 @@
+{
+    "2-56 UNC-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "major": {
+                "min": "2.055",
+                "max": "2.153",
+                "min_inch": ".0813",
+                "max_inch": ".0854"
+            },
+            "pitch": {
+                "min": "1.801",
+                "max": "1.844",
+                "min_inch": ".0717",
+                "max_inch": ".0738"
+            },
+            "minor": {
+                "max": "1.597",
+                "max_inch": ".0635"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "BEFORE_PLATING",
+            "major": {
+                "min": "2.055",
+                "max": "2.153",
+                "min_inch": ".0809",
+                "max_inch": ".0848"
+            },
+            "pitch": {
+                "min": "1.801",
+                "max": "1.844",
+                "min_inch": ".0709",
+                "max_inch": ".0726"
+            },
+            "minor": {
+                "max": "1.597",
+                "max_inch": ".0629"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "2.066",
+                "max": "2.169"
+            },
+            "pitch": {
+                "min": "1.822",
+                "max": "1.864"
+            },
+            "minor": {
+                "max": "1.628"
+            }
+        }
+    ],
+    "4-40 UNC-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "major": {
+                "min": "2.695",
+                "max": "2.845",
+                "min_inch": ".1061",
+                "max_inch": ".1112"
+            },
+            "pitch": {
+                "min": "2.433",
+                "max": "2.517",
+                "min_inch": ".0925",
+                "max_inch": ".0950"
+            },
+            "minor": {
+                "min": "2.156",
+                "max": "2.385",
+                "min_inch": ".0805",
+                "max_inch": ".0815"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "BEFORE_PLATING",
+            "major": {
+                "min": "2.685",
+                "max": "2.809",
+                "min_inch": ".1057",
+                "max_inch": ".1106"
+            },
+            "pitch": {
+                "min": "2.330",
+                "max": "2.382",
+                "min_inch": ".0917",
+                "max_inch": ".0938"
+            },
+            "minor": {
+                "max": "2.029",
+                "max_inch": ".0799"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "2.695",
+                "max": "2.824"
+            },
+            "pitch": {
+                "min": "2.350",
+                "max": "2.413"
+            },
+            "minor": {
+                "max": "2.067"
+            }
+        }
+    ],
+    "4-48 UNF-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "major": {
+                "min": "2.713",
+                "max": "2.627",
+                "min_inch": ".1068",
+                "max_inch": ".1113"
+            },
+            "pitch": {
+                "min": "2.424",
+                "max": "2.484",
+                "min_inch": ".0954",
+                "max_inch": ".0978"
+            },
+            "minor": {
+                "max": "2.176",
+                "max_inch": ".0857"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "BEFORE_PLATING",
+            "major": {
+                "min": "2.703",
+                "max": "2.812",
+                "min_inch": ".1064",
+                "max_inch": ".1107"
+            },
+            "pitch": {
+                "min": "2.403",
+                "max": "2.454",
+                "min_inch": ".0946",
+                "max_inch": ".0966"
+            },
+            "minor": {
+                "max": "2.162",
+                "max_inch": ".0851"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "2.714",
+                "max": "2.827"
+            },
+            "pitch": {
+                "min": "2.424",
+                "max": "2.484"
+            },
+            "minor": {
+                "max": "2.195"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "BEFORE_PLATING",
+            "minor": {
+                "min": "2.286",
+                "max": "2.477"
+            },
+            "pitch": {
+                "min": "2.532",
+                "max": "2.601"
+            },
+            "major": {
+                "min": "2.860"
+            }
+        }
+    ],
+    "6-32 UNC-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "major": {
+                "min": "3.332",
+                "max": "3.505",
+                "min_inch": ".1312",
+                "max_inch": ".1372"
+            },
+            "pitch": {
+                "min": "2.990",
+                "max": "3.084",
+                "min_inch": ".1141",
+                "max_inch": ".1169"
+            },
+            "minor": {
+                "min": "2.642",
+                "max": "2.896",
+                "max_inch": ".0989"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "BEFORE_PLATING",
+            "major": {
+                "min": "3.325",
+                "max": "3.475",
+                "min_inch": ".1309",
+                "max_inch": ".1368"
+            },
+            "pitch": {
+                "min": "2.885",
+                "max": "2.949",
+                "min_inch": ".1136",
+                "max_inch": ".1161"
+            },
+            "minor": {
+                "max": "2.502",
+                "max_inch": ".0985"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "3.364",
+                "max": "3.505"
+            },
+            "pitch": {
+                "min": "2.899",
+                "max": "2.969"
+            },
+            "minor": {
+                "max": "2.748"
+            }
+        }
+    ],
+    "6-40 UNF-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "major": {
+                "min": "3.356",
+                "max": "3.505",
+                "min_inch": ".1321",
+                "max_inch": ".1372"
+            },
+            "pitch": {
+                "min": "3.094",
+                "max": "3.180",
+                "min_inch": ".1184",
+                "max_inch": ".1210"
+            },
+            "minor": {
+                "min": "2.819",
+                "max": "3.023",
+                "max_inch": ".1065"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "BEFORE_PLATING",
+            "major": {
+                "min": "3.348",
+                "max": "3.475",
+                "min_inch": ".1318",
+                "max_inch": ".1368"
+            },
+            "pitch": {
+                "min": "2.995",
+                "max": "3.053",
+                "min_inch": ".1179",
+                "max_inch": ".1202"
+            },
+            "minor": {
+                "max": "2.695",
+                "max_inch": ".1061"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "3.356",
+                "max": "3.484"
+            },
+            "pitch": {
+                "min": "3.008",
+                "max": "3.073"
+            },
+            "minor": {
+                "max": "2.727"
+            }
+        }
+    ],
+    "8-56 UNS-3A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "major": {
+                "min": "4.000",
+                "max": "4.166",
+                "min_inch": ".1592",
+                "max_inch": ".1653"
+            },
+            "pitch": {
+                "min": "3.871",
+                "max": "3.932",
+                "min_inch": ".1505",
+                "max_inch": ".1524"
+            },
+            "minor": {
+                "min": "3.683",
+                "max": "3.785",
+                "max_inch": ".1434"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "BEFORE_PLATING",
+            "major": {
+                "min": "4.034",
+                "max": "4.183",
+                "min_inch": ".1588",
+                "max_inch": ".1647"
+            },
+            "pitch": {
+                "min": "3.802",
+                "max": "3.840",
+                "min_inch": ".1497",
+                "max_inch": ".1512"
+            },
+            "minor": {
+                "max": "3.627",
+                "max_inch": ".1428"
+            }
+        }
+    ],
+    "10-32 UNF-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "major": {
+                "min": "4.644",
+                "max": "4.792",
+                "min_inch": ".1831",
+                "max_inch": ".1891"
+            },
+            "pitch": {
+                "min": "4.199",
+                "max": "4.267",
+                "min_inch": ".1658",
+                "max_inch": ".1688"
+            },
+            "minor": {
+                "max": "3.820",
+                "max_inch": ".1508"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "BEFORE_PLATING",
+            "major": {
+                "min": "4.644",
+                "max": "4.792",
+                "min_inch": ".1828",
+                "max_inch": ".1887"
+            },
+            "pitch": {
+                "min": "4.199",
+                "max": "4.267",
+                "min_inch": ".1653",
+                "max_inch": ".1680"
+            },
+            "minor": {
+                "max": "3.820",
+                "max_inch": ".1504"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "4.651",
+                "max": "4.803"
+            },
+            "pitch": {
+                "min": "4.212",
+                "max": "4.287"
+            },
+            "minor": {
+                "max": "3.858"
+            }
+        }
+    ],
+    "10-48 UNS-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "major": {
+                "min": "4.692",
+                "max": "4.805",
+                "min_inch": ".1847",
+                "max_inch": ".1892"
+            },
+            "pitch": {
+                "min": "4.397",
+                "max": "4.462",
+                "min_inch": ".1731",
+                "max_inch": ".1757"
+            },
+            "minor": {
+                "max": "4.155",
+                "max_inch": ".1636"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "BEFORE_PLATING",
+            "major": {
+                "min": "4.661",
+                "max": "4.796",
+                "min_inch": ".1844",
+                "max_inch": ".1888"
+            },
+            "pitch": {
+                "min": "4.384",
+                "max": "4.442",
+                "min_inch": ".1726",
+                "max_inch": ".1749"
+            },
+            "minor": {
+                "max": "4.145",
+                "max_inch": ".1632"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "4.692",
+                "max": "4.805"
+            },
+            "pitch": {
+                "min": "4.397",
+                "max": "4.462"
+            },
+            "minor": {
+                "max": "4.175"
+            }
+        }
+    ],
+    "1/4-20 UNC-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "major": {
+                "min": "6.160",
+                "max": "6.350",
+                "min_inch": ".2408",
+                "max_inch": ".2489"
+            },
+            "pitch": {
+                "min": "5.525",
+                "max": "5.649",
+                "min_inch": ".2127",
+                "max_inch": ".2164"
+            },
+            "minor": {
+                "min": "4.978",
+                "max": "5.258",
+                "max_inch": ".1876"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "BEFORE_PLATING",
+            "major": {
+                "min": "6.002",
+                "max": "6.307",
+                "min_inch": ".2363",
+                "max_inch": ".2483"
+            },
+            "pitch": {
+                "min": "5.334",
+                "max": "5.466",
+                "min_inch": ".2100",
+                "max_inch": ".2152"
+            },
+            "minor": {
+                "max": "4.750",
+                "max_inch": ".1870"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "6.168",
+                "max": "6.350"
+            },
+            "pitch": {
+                "min": "5.404",
+                "max": "5.497"
+            },
+            "minor": {
+                "max": "5.034"
+            }
+        }
+    ],
+    "1/4-28 UNF-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "major": {
+                "min": "6.185",
+                "max": "6.350",
+                "min_inch": ".2425",
+                "max_inch": ".2490"
+            },
+            "pitch": {
+                "min": "5.761",
+                "max": "5.870",
+                "min_inch": ".2225",
+                "max_inch": ".2258"
+            },
+            "minor": {
+                "min": "5.359",
+                "max": "5.588",
+                "max_inch": ".2052"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "BEFORE_PLATING",
+            "major": {
+                "min": "6.066",
+                "max": "6.309",
+                "min_inch": ".2388",
+                "max_inch": ".2484"
+            },
+            "pitch": {
+                "min": "5.588",
+                "max": "5.705",
+                "min_inch": ".2200",
+                "max_inch": ".2246"
+            },
+            "minor": {
+                "max": "5.197",
+                "max_inch": ".2046"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "6.186",
+                "max": "6.350"
+            },
+            "pitch": {
+                "min": "5.655",
+                "max": "5.735"
+            },
+            "minor": {
+                "max": "5.352"
+            }
+        }
+    ],
+    "1/4-36 UNS-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "major": {
+                "min": "6.188",
+                "max": "6.327",
+                "min_inch": ".2436",
+                "max_inch": ".2491"
+            },
+            "pitch": {
+                "min": "5.792",
+                "max": "5.869",
+                "min_inch": ".2280",
+                "max_inch": ".2311"
+            },
+            "minor": {
+                "max": "5.461",
+                "max_inch": ".2150"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "BEFORE_PLATING",
+            "major": {
+                "min": "6.185",
+                "max": "6.314",
+                "min_inch": ".2435",
+                "max_inch": ".2486"
+            },
+            "pitch": {
+                "min": "5.787",
+                "max": "5.844",
+                "min_inch": ".2278",
+                "max_inch": ".2301"
+            },
+            "minor": {
+                "max": "5.448",
+                "max_inch": ".2145"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "6.188",
+                "max": "6.327"
+            },
+            "pitch": {
+                "min": "5.792",
+                "max": "5.869"
+            },
+            "minor": {
+                "max": "5.488"
+            }
+        }
+    ],
+    "9/32-40 UNS-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "major": {
+                "min": "6.980",
+                "max": "7.142",
+                "min_inch": ".2752",
+                "max_inch": ".2803"
+            },
+            "pitch": {
+                "min": "6.731",
+                "max": "6.828",
+                "min_inch": ".2611",
+                "max_inch": ".2641"
+            },
+            "minor": {
+                "min": "6.452",
+                "max": "6.604",
+                "max_inch": ".2497"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "BEFORE_PLATING",
+            "major": {
+                "min": "6.988",
+                "max": "7.107",
+                "min_inch": ".2751",
+                "max_inch": ".2798"
+            },
+            "pitch": {
+                "min": "6.627",
+                "max": "6.683",
+                "min_inch": ".2609",
+                "max_inch": ".2631"
+            },
+            "minor": {
+                "max": "6.330",
+                "max_inch": ".2492"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "7.006",
+                "max": "7.144"
+            },
+            "pitch": {
+                "min": "6.630",
+                "max": "6.708"
+            },
+            "minor": {
+                "max": "6.317"
+            }
+        }
+    ],
+    "5/16-32 UNEF-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "major": {
+                "min": "7.760",
+                "max": "7.912",
+                "min_inch": ".3055",
+                "max_inch": ".3115"
+            },
+            "pitch": {
+                "min": "7.316",
+                "max": "7.396",
+                "min_inch": ".2880",
+                "max_inch": ".2912"
+            },
+            "minor": {
+                "max": "6.967",
+                "max_inch": ".2732"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "BEFORE_PLATING",
+            "major": {
+                "min": "7.753",
+                "max": "7.901",
+                "min_inch": ".3052",
+                "max_inch": ".3111"
+            },
+            "pitch": {
+                "min": "7.303",
+                "max": "7.376",
+                "min_inch": ".2875",
+                "max_inch": ".2904"
+            },
+            "minor": {
+                "max": "6.929",
+                "max_inch": ".2728"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "7.760",
+                "max": "7.912"
+            },
+            "pitch": {
+                "min": "7.316",
+                "max": "7.396"
+            },
+            "minor": {
+                "max": "6.697"
+            }
+        }
+    ],
+    "3/8-32 UNEF-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "major": {
+                "min": "9.363",
+                "max": "9.525",
+                "min_inch": ".3680",
+                "max_inch": ".3740"
+            },
+            "pitch": {
+                "min": "9.009",
+                "max": "9.121",
+                "min_inch": ".3503",
+                "max_inch": ".3537"
+            },
+            "minor": {
+                "min": "8.661",
+                "max": "8.865",
+                "max_inch": ".3357"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "BEFORE_PLATING",
+            "major": {
+                "min": "9.332",
+                "max": "9.477",
+                "min_inch": ".3674",
+                "max_inch": ".3731"
+            },
+            "pitch": {
+                "min": "8.867",
+                "max": "8.938",
+                "min_inch": ".3491",
+                "max_inch": ".3519"
+            },
+            "minor": {
+                "max": "8.504",
+                "max_inch": ".3348"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "9.363",
+                "max": "9.525"
+            },
+            "pitch": {
+                "min": "8.899",
+                "max": "8.984"
+            },
+            "minor": {
+                "max": "8.494"
+            }
+        }
+    ],
+    "7/16-28 UNEF-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "major": {
+                "min": "10.920",
+                "max": "11.084",
+                "min_inch": ".4299",
+                "max_inch": ".4364"
+            },
+            "pitch": {
+                "min": "10.404",
+                "max": "10.495",
+                "min_inch": ".4096",
+                "max_inch": ".4132"
+            },
+            "minor": {
+                "max": "9.748",
+                "max_inch": ".3926"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "BEFORE_PLATING",
+            "major": {
+                "min": "10.904",
+                "max": "11.062",
+                "min_inch": ".4293",
+                "max_inch": ".4355"
+            },
+            "pitch": {
+                "min": "10.373",
+                "max": "10.449",
+                "min_inch": ".4084",
+                "max_inch": ".4114"
+            },
+            "minor": {
+                "max": "9.949",
+                "max_inch": ".3917"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "10.920",
+                "max": "11.084"
+            },
+            "pitch": {
+                "min": "10.404",
+                "max": "10.495"
+            },
+            "minor": {
+                "max": "9.972"
+            }
+        }
+    ],
+    "1/2-28 UNEF-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "major": {
+                "min": "12.507",
+                "max": "12.672",
+                "min_inch": ".4924",
+                "max_inch": ".4989"
+            },
+            "pitch": {
+                "min": "11.989",
+                "max": "12.082",
+                "min_inch": ".4720",
+                "max_inch": ".4757"
+            },
+            "minor": {
+                "max": "11.559",
+                "max_inch": ".4551"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "BEFORE_PLATING",
+            "major": {
+                "min": "12.492",
+                "max": "12.649",
+                "min_inch": ".4918",
+                "max_inch": ".4980"
+            },
+            "pitch": {
+                "min": "11.958",
+                "max": "12.035",
+                "min_inch": ".4708",
+                "max_inch": ".4739"
+            },
+            "minor": {
+                "max": "11.537",
+                "max_inch": ".4542"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "12.538",
+                "max": "12.700"
+            },
+            "pitch": {
+                "min": "11.990",
+                "max": "12.083"
+            },
+            "minor": {
+                "max": "11.521"
+            }
+        }
+    ],
+    "5/8-24 UNEF-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "major": {
+                "min": "15.661",
+                "max": "15.845",
+                "min_inch": ".6166",
+                "max_inch": ".6238"
+            },
+            "pitch": {
+                "min": "15.055",
+                "max": "15.156",
+                "min_inch": ".5927",
+                "max_inch": ".5967"
+            },
+            "minor": {
+                "max": "14.584",
+                "max_inch": ".5727"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "BEFORE_PLATING",
+            "major": {
+                "min": "15.646",
+                "max": "15.822",
+                "min_inch": ".6160",
+                "max_inch": ".6229"
+            },
+            "pitch": {
+                "min": "15.024",
+                "max": "15.110",
+                "min_inch": ".5915",
+                "max_inch": ".5949"
+            },
+            "minor": {
+                "max": "14.524",
+                "max_inch": ".5718"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "15.662",
+                "max": "15.844"
+            },
+            "pitch": {
+                "min": "15.055",
+                "max": "15.156"
+            },
+            "minor": {
+                "max": "14.546"
+            }
+        }
+    ],
+    "11/16-24 UNEF-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "major": {
+                "min": "17.290",
+                "max": "17.463",
+                "min_inch": ".6791",
+                "max_inch": ".6863"
+            },
+            "pitch": {
+                "min": "16.774",
+                "max": "16.906",
+                "min_inch": ".6552",
+                "max_inch": ".6592"
+            },
+            "minor": {
+                "min": "16.307",
+                "max": "16.561",
+                "max_inch": ".6352"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "BEFORE_PLATING",
+            "major": {
+                "min": "17.234",
+                "max": "17.409",
+                "min_inch": ".6785",
+                "max_inch": ".6854"
+            },
+            "pitch": {
+                "min": "16.612",
+                "max": "16.698",
+                "min_inch": ".6540",
+                "max_inch": ".6574"
+            },
+            "minor": {
+                "max": "16.111",
+                "max_inch": ".6343"
+            }
+        }
+    ],
+    "0-80 UNF-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "1.431",
+                "max": "1.511"
+            },
+            "pitch": {
+                "min": "1.260",
+                "max": "1.305"
+            },
+            "minor": {
+                "max": "1.132"
+            }
+        }
+    ],
+    "8-36 UNF-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "4.026",
+                "max": "4.165"
+            },
+            "pitch": {
+                "min": "3.656",
+                "max": "3.708"
+            },
+            "minor": {
+                "max": "3.324"
+            }
+        }
+    ],
+    "6-80 UNS-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "3.405",
+                "max": "3.485"
+            },
+            "pitch": {
+                "min": "3.232",
+                "max": "3.278"
+            },
+            "minor": {
+                "max": "3.095"
+            }
+        }
+    ],
+    "12-36 UNS-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "5.324",
+                "max": "5.463"
+            },
+            "pitch": {
+                "min": "4.931",
+                "max": "5.006"
+            },
+            "minor": {
+                "max": "4.625"
+            }
+        }
+    ],
+    "10-36 UNS-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "4.664",
+                "max": "4.803"
+            },
+            "pitch": {
+                "min": "4.270",
+                "max": "4.345"
+            },
+            "minor": {
+                "max": "3.962"
+            }
+        }
+    ],
+    "5/16-40 UNS-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "7.786",
+                "max": "7.914"
+            },
+            "pitch": {
+                "min": "7.430",
+                "max": "7.503"
+            },
+            "minor": {
+                "max": "7.157"
+            }
+        }
+    ],
+    "0.8mm UNM-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "0.771",
+                "max": "0.800"
+            },
+            "pitch": {
+                "min": "0.647",
+                "max": "0.670"
+            },
+            "minor": {
+                "max": "0.571"
+            }
+        }
+    ],
+    "8-64 UNS-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "4.054",
+                "max": "4.147"
+            },
+            "pitch": {
+                "min": "3.833",
+                "max": "3.891"
+            },
+            "minor": {
+                "min": "3.577",
+                "max": "3.718"
+            }
+        }
+    ],
+    "5-40 UNC-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "3.156",
+                "max": "3.175"
+            },
+            "pitch": {
+                "min": "2.744",
+                "max": "2.764"
+            },
+            "minor": {
+                "max": "2.375"
+            }
+        }
+    ],
+    "8-32 UNC-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "4.024",
+                "max": "4.166"
+            },
+            "pitch": {
+                "min": "3.554",
+                "max": "3.627"
+            },
+            "minor": {
+                "max": "3.409"
+            }
+        }
+    ],
+    "10-24 UNC-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "4.659",
+                "max": "4.826"
+            },
+            "pitch": {
+                "min": "4.027",
+                "max": "4.112"
+            },
+            "minor": {
+                "max": "3.896"
+            }
+        }
+    ],
+    "12-24 UNC-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "5.457",
+                "max": "5.486"
+            },
+            "pitch": {
+                "min": "4.766",
+                "max": "4.798"
+            },
+            "minor": {
+                "max": "4.074"
+            }
+        },
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "5.335",
+                "max": "5.486"
+            },
+            "pitch": {
+                "min": "4.700",
+                "max": "4.765"
+            },
+            "minor": {
+                "max": "4.097"
+            }
+        }
+    ],
+    "5/16-18 UNC-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "7.908",
+                "max": "7.938"
+            },
+            "pitch": {
+                "min": "6.988",
+                "max": "7.021"
+            },
+            "minor": {
+                "max": "6.259"
+            }
+        }
+    ],
+    "5/16-24 UNF-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "7.911",
+                "max": "7.938"
+            },
+            "pitch": {
+                "min": "7.220",
+                "max": "7.249"
+            },
+            "minor": {
+                "max": "6.695"
+            }
+        }
+    ],
+    "3/8-16 UNC-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "9.493",
+                "max": "9.525"
+            },
+            "pitch": {
+                "min": "8.459",
+                "max": "8.494"
+            },
+            "minor": {
+                "max": "7.633"
+            }
+        }
+    ],
+    "3-56 UNF-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "2.394",
+                "max": "2.497"
+            },
+            "pitch": {
+                "min": "2.147",
+                "max": "2.202"
+            },
+            "minor": {
+                "max": "1.961"
+            }
+        }
+    ],
+    "1-72 UNF-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "1.766",
+                "max": "1.839"
+            },
+            "pitch": {
+                "min": "1.576",
+                "max": "1.610"
+            },
+            "minor": {
+                "max": "1.422"
+            }
+        }
+    ],
+    "12-56 UNS-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "5.345",
+                "max": "5.469"
+            },
+            "pitch": {
+                "min": "5.101",
+                "max": "5.156"
+            },
+            "minor": {
+                "max": "4.935"
+            }
+        }
+    ],
+    "12-32 UNEF-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "5.325",
+                "max": "5.486"
+            },
+            "pitch": {
+                "min": "4.870",
+                "max": "4.948"
+            },
+            "minor": {
+                "max": "4.458"
+            }
+        }
+    ],
+    "12-40 UNS-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "5.350",
+                "max": "5.486"
+            },
+            "pitch": {
+                "min": "4.974",
+                "max": "5.050"
+            },
+            "minor": {
+                "max": "4.661"
+            }
+        }
+    ],
+    "5/16-28 UN-2A": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "7.748",
+                "max": "7.912"
+            },
+            "pitch": {
+                "min": "7.237",
+                "max": "7.323"
+            },
+            "minor": {
+                "max": "6.761"
+            }
+        }
+    ],
+    "M7X0.75": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "6.838",
+                "max": "6.978"
+            },
+            "pitch": {
+                "min": "6.391",
+                "max": "6.491"
+            },
+            "minor": {
+                "max": "6.166"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "6.188",
+                "max": "6.378"
+            },
+            "pitch": {
+                "min": "6.513",
+                "max": "6.645"
+            },
+            "major": {
+                "min": "7.000"
+            }
+        }
+    ],
+    "M2X0.4": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "1.886",
+                "max": "1.981"
+            },
+            "pitch": {
+                "min": "1.654",
+                "max": "1.721"
+            },
+            "minor": {
+                "max": "1.509"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "1.567",
+                "max": "1.679"
+            },
+            "pitch": {
+                "min": "1.740",
+                "max": "1.830"
+            },
+            "major": {
+                "min": "2.000"
+            }
+        }
+    ],
+    "M3X0.35": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "2.896",
+                "max": "2.981"
+            },
+            "pitch": {
+                "min": "2.687",
+                "max": "2.754"
+            },
+            "minor": {
+                "max": "2.571"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "2.621",
+                "max": "2.766"
+            },
+            "pitch": {
+                "min": "2.773",
+                "max": "2.900"
+            },
+            "major": {
+                "min": "3.000"
+            }
+        }
+    ],
+    "M2.6X0.45": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "2.480",
+                "max": "2.580"
+            },
+            "pitch": {
+                "min": "2.217",
+                "max": "2.288"
+            },
+            "minor": {
+                "max": "2.113"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "2.113",
+                "max": "2.238"
+            },
+            "pitch": {
+                "min": "2.308",
+                "max": "2.393"
+            },
+            "major": {
+                "min": "2.600"
+            }
+        }
+    ],
+    "M10X0.75": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "9.838",
+                "max": "9.978"
+            },
+            "pitch": {
+                "min": "9.391",
+                "max": "9.491"
+            },
+            "minor": {
+                "max": "9.166"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "9.188",
+                "max": "9.378"
+            },
+            "pitch": {
+                "min": "9.513",
+                "max": "9.645"
+            },
+            "major": {
+                "min": "10.000"
+            }
+        }
+    ],
+    "M14X1.0": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "13.790",
+                "max": "13.974"
+            },
+            "pitch": {
+                "min": "13.210",
+                "max": "13.320"
+            },
+            "minor": {
+                "max": "12.891"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "12.917",
+                "max": "13.153"
+            },
+            "pitch": {
+                "min": "13.350",
+                "max": "13.510"
+            },
+            "major": {
+                "min": "14.000"
+            }
+        }
+    ],
+    "M5X0.5": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "4.826",
+                "max": "4.976"
+            },
+            "pitch": {
+                "min": "4.596",
+                "max": "4.670"
+            },
+            "minor": {
+                "max": "4.456"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "4.459",
+                "max": "4.599"
+            },
+            "pitch": {
+                "min": "4.675",
+                "max": "4.770"
+            },
+            "major": {
+                "min": "5.000"
+            }
+        }
+    ],
+    "M3X0.5": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "2.874",
+                "max": "2.980"
+            },
+            "pitch": {
+                "min": "2.580",
+                "max": "2.655"
+            },
+            "minor": {
+                "max": "2.459"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "2.459",
+                "max": "2.599"
+            },
+            "pitch": {
+                "min": "2.675",
+                "max": "2.775"
+            },
+            "major": {
+                "min": "3.000"
+            }
+        }
+    ],
+    "M4X0.7": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "3.838",
+                "max": "3.978"
+            },
+            "pitch": {
+                "min": "3.433",
+                "max": "3.523"
+            },
+            "minor": {
+                "max": "3.242"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "3.242",
+                "max": "3.422"
+            },
+            "pitch": {
+                "min": "3.545",
+                "max": "3.663"
+            },
+            "major": {
+                "min": "4.000"
+            }
+        }
+    ],
+    "M20X1.0": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "19.794",
+                "max": "19.974"
+            },
+            "pitch": {
+                "min": "19.206",
+                "max": "19.324"
+            },
+            "minor": {
+                "max": "18.891"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "18.917",
+                "max": "19.153"
+            },
+            "pitch": {
+                "min": "19.350",
+                "max": "19.510"
+            },
+            "major": {
+                "min": "20.000"
+            }
+        }
+    ],
+    "M29X1.5": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "28.732",
+                "max": "28.952"
+            },
+            "pitch": {
+                "min": "27.872",
+                "max": "28.026"
+            },
+            "minor": {
+                "max": "27.327"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "27.376",
+                "max": "27.676"
+            },
+            "pitch": {
+                "min": "28.026",
+                "max": "28.216"
+            },
+            "major": {
+                "min": "29.000"
+            }
+        }
+    ],
+    "M5.5X0.5": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "5.374",
+                "max": "5.490"
+            },
+            "pitch": {
+                "min": "5.060",
+                "max": "5.175"
+            },
+            "minor": {
+                "max": "4.939"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "4.959",
+                "max": "5.099"
+            },
+            "pitch": {
+                "min": "5.175",
+                "max": "5.295"
+            },
+            "major": {
+                "min": "5.500"
+            }
+        }
+    ],
+    "M8X0.75": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "7.838",
+                "max": "7.978"
+            },
+            "pitch": {
+                "min": "7.410",
+                "max": "7.510"
+            },
+            "minor": {
+                "max": "7.166"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "7.188",
+                "max": "7.378"
+            },
+            "pitch": {
+                "min": "7.513",
+                "max": "7.645"
+            },
+            "major": {
+                "min": "8.000"
+            }
+        }
+    ],
+    "M2.5X0.45": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "2.380",
+                "max": "2.480"
+            },
+            "pitch": {
+                "min": "2.117",
+                "max": "2.188"
+            },
+            "minor": {
+                "max": "2.013"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "2.013",
+                "max": "2.138"
+            },
+            "pitch": {
+                "min": "2.208",
+                "max": "2.303"
+            },
+            "major": {
+                "min": "2.500"
+            }
+        }
+    ],
+    "M8X1.0": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "7.794",
+                "max": "7.974"
+            },
+            "pitch": {
+                "min": "7.234",
+                "max": "7.324"
+            },
+            "minor": {
+                "max": "6.891"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "6.917",
+                "max": "7.153"
+            },
+            "pitch": {
+                "min": "7.350",
+                "max": "7.500"
+            },
+            "major": {
+                "min": "8.000"
+            }
+        }
+    ],
+    "M6X0.5": [
+        {
+            "type": "OUTER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "major": {
+                "min": "5.874",
+                "max": "5.978"
+            },
+            "pitch": {
+                "min": "5.580",
+                "max": "5.655"
+            },
+            "minor": {
+                "max": "5.459"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "5.459",
+                "max": "5.599"
+            },
+            "pitch": {
+                "min": "5.675",
+                "max": "5.787"
+            },
+            "major": {
+                "min": "6.000"
+            }
+        }
+    ],
+    "0-80 UNF-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "minor": {
+                "min": "1.182",
+                "max": "1.305"
+            },
+            "pitch": {
+                "min": "1.305",
+                "max": "1.376"
+            },
+            "major": {
+                "min": "1.524"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "1.181",
+                "max": "1.306"
+            },
+            "pitch": {
+                "min": "1.318",
+                "max": "1.377"
+            },
+            "major": {
+                "min": "1.524"
+            }
+        }
+    ],
+    "1/4-36 UNS-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "minor": {
+                "min": "5.601",
+                "max": "5.742"
+            },
+            "pitch": {
+                "min": "5.742",
+                "max": "5.999"
+            },
+            "major": {
+                "min": "6.363"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "5.588",
+                "max": "5.740"
+            },
+            "pitch": {
+                "min": "5.893",
+                "max": "5.994"
+            },
+            "major": {
+                "min": "6.350"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "BEFORE_PLATING",
+            "minor": {
+                "min": "5.601",
+                "max": "5.742"
+            },
+            "pitch": {
+                "min": "5.919",
+                "max": "5.999"
+            },
+            "major": {
+                "min": "6.363"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "BEFORE_PLATING",
+            "minor": {
+                "min": "5.588",
+                "max": "5.740"
+            },
+            "pitch": {
+                "min": "5.893",
+                "max": "5.994"
+            },
+            "major": {
+                "min": "6.350"
+            }
+        }
+    ],
+    "12-56 UNS-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "minor": {
+                "min": "5.004",
+                "max": "5.105"
+            },
+            "pitch": {
+                "min": "5.105",
+                "max": "5.273"
+            },
+            "major": {
+                "min": "5.487"
+            }
+        }
+    ],
+    "3/8-24 UNF-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "minor": {
+                "min": "8.383",
+                "max": "8.636"
+            },
+            "pitch": {
+                "min": "8.636",
+                "max": "8.961"
+            },
+            "major": {
+                "min": "9.526"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "8.385",
+                "max": "8.636"
+            },
+            "pitch": {
+                "min": "8.636",
+                "max": "8.961"
+            },
+            "major": {
+                "min": "9.525"
+            }
+        }
+    ],
+    "5/16-32 UNEF-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "minor": {
+                "min": "7.087",
+                "max": "7.264"
+            },
+            "pitch": {
+                "min": "7.264",
+                "max": "7.528"
+            },
+            "major": {
+                "min": "7.938"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "7.087",
+                "max": "7.264"
+            },
+            "pitch": {
+                "min": "7.422",
+                "max": "7.528"
+            },
+            "major": {
+                "min": "7.938"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "BEFORE_PLATING",
+            "minor": {
+                "min": "7.097",
+                "max": "7.272"
+            },
+            "pitch": {
+                "min": "7.443",
+                "max": "7.541"
+            },
+            "major": {
+                "min": "7.948"
+            }
+        }
+    ],
+    "5-44 UNF-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "minor": {
+                "min": "2.550",
+                "max": "2.740"
+            },
+            "pitch": {
+                "min": "2.740",
+                "max": "2.880"
+            },
+            "major": {
+                "min": "3.175"
+            }
+        }
+    ],
+    "6-40 UNF-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "minor": {
+                "min": "2.820",
+                "max": "3.022"
+            },
+            "pitch": {
+                "min": "3.022",
+                "max": "3.180"
+            },
+            "major": {
+                "min": "3.506"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "2.819",
+                "max": "3.022"
+            },
+            "pitch": {
+                "min": "3.096",
+                "max": "3.180"
+            },
+            "major": {
+                "min": "3.505"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "BEFORE_PLATING",
+            "minor": {
+                "min": "2.830",
+                "max": "3.030"
+            },
+            "pitch": {
+                "min": "3.115",
+                "max": "3.192"
+            },
+            "major": {
+                "min": "3.516"
+            }
+        }
+    ],
+    "1-72 UNF-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "minor": {
+                "min": "1.473",
+                "max": "1.612"
+            },
+            "pitch": {
+                "min": "1.612",
+                "max": "1.689"
+            },
+            "major": {
+                "min": "1.854"
+            }
+        }
+    ],
+    "2-56 UNC-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "minor": {
+                "min": "1.695",
+                "max": "1.871"
+            },
+            "pitch": {
+                "min": "1.871",
+                "max": "1.960"
+            },
+            "major": {
+                "min": "2.185"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "BEFORE_PLATING",
+            "minor": {
+                "min": "1.710",
+                "max": "1.882"
+            },
+            "pitch": {
+                "min": "1.921",
+                "max": "1.981"
+            },
+            "major": {
+                "min": "2.200"
+            }
+        }
+    ],
+    "10-56 UNS-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "minor": {
+                "min": "4.344",
+                "max": "4.445"
+            },
+            "pitch": {
+                "min": "4.445",
+                "max": "4.612"
+            },
+            "major": {
+                "min": "4.826"
+            }
+        }
+    ],
+    "10-36 UNS-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "minor": {
+                "min": "4.064",
+                "max": "4.216"
+            },
+            "pitch": {
+                "min": "4.216",
+                "max": "4.467"
+            },
+            "major": {
+                "min": "4.826"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "4.064",
+                "max": "4.216"
+            },
+            "pitch": {
+                "min": "4.369",
+                "max": "4.487"
+            },
+            "major": {
+                "min": "4.826"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "BEFORE_PLATING",
+            "minor": {
+                "min": "4.064",
+                "max": "4.217"
+            },
+            "pitch": {
+                "min": "4.368",
+                "max": "4.445"
+            },
+            "major": {
+                "min": "4.826"
+            }
+        }
+    ],
+    "9/16-24 UNEF-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "minor": {
+                "min": "13.132",
+                "max": "13.385"
+            },
+            "pitch": {
+                "min": "13.385",
+                "max": "13.728"
+            },
+            "major": {
+                "min": "14.288"
+            }
+        }
+    ],
+    "1/4-20 UNC-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "minor": {
+                "min": "4.979",
+                "max": "5.257"
+            },
+            "pitch": {
+                "min": "5.257",
+                "max": "5.648"
+            },
+            "major": {
+                "min": "6.350"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "4.979",
+                "max": "5.258"
+            },
+            "pitch": {
+                "min": "5.525",
+                "max": "5.649"
+            },
+            "major": {
+                "min": "6.351"
+            }
+        }
+    ],
+    "5/8-24 UNEF-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "minor": {
+                "min": "14.755",
+                "max": "15.001"
+            },
+            "pitch": {
+                "min": "15.001",
+                "max": "15.349"
+            },
+            "major": {
+                "min": "15.897"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "14.733",
+                "max": "14.986"
+            },
+            "pitch": {
+                "min": "15.187",
+                "max": "15.318"
+            },
+            "major": {
+                "min": "15.876"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "BEFORE_PLATING",
+            "minor": {
+                "min": "14.732",
+                "max": "14.986"
+            },
+            "pitch": {
+                "min": "15.187",
+                "max": "15.318"
+            },
+            "major": {
+                "min": "15.875"
+            }
+        }
+    ],
+    "3/8-32 UNEF-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "minor": {
+                "min": "8.661",
+                "max": "8.865"
+            },
+            "pitch": {
+                "min": "8.865",
+                "max": "9.122"
+            },
+            "major": {
+                "min": "9.525"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "BEFORE_PLATING",
+            "minor": {
+                "min": "8.685",
+                "max": "8.879"
+            },
+            "pitch": {
+                "min": "9.506",
+                "max": "9.151"
+            },
+            "major": {
+                "min": "9.547"
+            }
+        }
+    ],
+    "7/16-28 UNEF-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "minor": {
+                "min": "10.135",
+                "max": "10.337"
+            },
+            "pitch": {
+                "min": "10.337",
+                "max": "10.640"
+            },
+            "major": {
+                "min": "11.113"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "10.135",
+                "max": "10.337"
+            },
+            "pitch": {
+                "min": "10.524",
+                "max": "10.640"
+            },
+            "major": {
+                "min": "11.113"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "BEFORE_PLATING",
+            "minor": {
+                "min": "10.158",
+                "max": "10.172"
+            },
+            "pitch": {
+                "min": "10.569",
+                "max": "10.670"
+            },
+            "major": {
+                "min": "11.136"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "BEFORE_PLATING",
+            "minor": {
+                "min": "10.135",
+                "max": "10.337"
+            },
+            "pitch": {
+                "min": "10.524",
+                "max": "10.640"
+            },
+            "major": {
+                "min": "11.113"
+            }
+        }
+    ],
+    "8-64 UNF-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "minor": {
+                "min": "3.734",
+                "max": "3.835"
+            },
+            "pitch": {
+                "min": "3.835",
+                "max": "3.985"
+            },
+            "major": {
+                "min": "4.165"
+            }
+        }
+    ],
+    "4-40 UNC-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "minor": {
+                "min": "2.156",
+                "max": "2.385"
+            },
+            "pitch": {
+                "min": "2.433",
+                "max": "2.517"
+            },
+            "major": {
+                "min": "2.845"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "2.157",
+                "max": "2.385"
+            },
+            "pitch": {
+                "min": "2.434",
+                "max": "2.517"
+            },
+            "major": {
+                "min": "2.845"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "BEFORE_PLATING",
+            "minor": {
+                "min": "2.172",
+                "max": "2.395"
+            },
+            "pitch": {
+                "min": "2.464",
+                "max": "2.537"
+            },
+            "major": {
+                "min": "2.861"
+            }
+        }
+    ],
+    "4-48 UNF-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "minor": {
+                "min": "2.271",
+                "max": "2.459"
+            },
+            "pitch": {
+                "min": "2.502",
+                "max": "2.581"
+            },
+            "major": {
+                "min": "2.845"
+            }
+        }
+    ],
+    "6-32 UNC-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "minor": {
+                "min": "2.642",
+                "max": "2.896"
+            },
+            "pitch": {
+                "min": "2.990",
+                "max": "3.084"
+            },
+            "major": {
+                "min": "3.505"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "2.643",
+                "max": "2.896"
+            },
+            "pitch": {
+                "min": "2.991",
+                "max": "3.084"
+            },
+            "major": {
+                "min": "3.506"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "BEFORE_PLATING",
+            "minor": {
+                "min": "2.652",
+                "max": "2.903"
+            },
+            "pitch": {
+                "min": "3.010",
+                "max": "3.096"
+            },
+            "major": {
+                "min": "3.516"
+            }
+        }
+    ],
+    "8-56 UNS-3B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "minor": {
+                "min": "3.683",
+                "max": "3.785"
+            },
+            "pitch": {
+                "min": "3.871",
+                "max": "3.932"
+            },
+            "major": {
+                "min": "4.166"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "BEFORE_PLATING",
+            "minor": {
+                "min": "3.698",
+                "max": "3.795"
+            },
+            "pitch": {
+                "min": "3.901",
+                "max": "3.952"
+            },
+            "major": {
+                "min": "4.181"
+            }
+        }
+    ],
+    "10-32 UNF-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "minor": {
+                "min": "3.962",
+                "max": "4.166"
+            },
+            "pitch": {
+                "min": "4.310",
+                "max": "4.409"
+            },
+            "major": {
+                "min": "4.826"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "3.963",
+                "max": "4.165"
+            },
+            "pitch": {
+                "min": "4.311",
+                "max": "4.409"
+            },
+            "major": {
+                "min": "4.827"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "BEFORE_PLATING",
+            "minor": {
+                "min": "3.972",
+                "max": "4.173"
+            },
+            "pitch": {
+                "min": "4.330",
+                "max": "4.422"
+            },
+            "major": {
+                "min": "4.836"
+            }
+        }
+    ],
+    "10-48 UNS-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "minor": {
+                "min": "4.242",
+                "max": "4.369"
+            },
+            "pitch": {
+                "min": "4.483",
+                "max": "4.569"
+            },
+            "major": {
+                "min": "4.826"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "4.242",
+                "max": "4.368"
+            },
+            "pitch": {
+                "min": "4.484",
+                "max": "4.569"
+            },
+            "major": {
+                "min": "4.826"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "BEFORE_PLATING",
+            "minor": {
+                "min": "4.252",
+                "max": "4.376"
+            },
+            "pitch": {
+                "min": "4.503",
+                "max": "4.582"
+            },
+            "major": {
+                "min": "4.836"
+            }
+        }
+    ],
+    "1/4-28 UNF-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "minor": {
+                "min": "5.359",
+                "max": "5.588"
+            },
+            "pitch": {
+                "min": "5.761",
+                "max": "5.870"
+            },
+            "major": {
+                "min": "6.350"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "5.360",
+                "max": "5.588"
+            },
+            "pitch": {
+                "min": "5.762",
+                "max": "5.870"
+            },
+            "major": {
+                "min": "6.351"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "BEFORE_PLATING",
+            "minor": {
+                "min": "5.375",
+                "max": "5.598"
+            },
+            "pitch": {
+                "min": "5.791",
+                "max": "5.890"
+            },
+            "major": {
+                "min": "6.365"
+            }
+        }
+    ],
+    "9/32-40 UNS-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "minor": {
+                "min": "6.452",
+                "max": "6.604"
+            },
+            "pitch": {
+                "min": "6.731",
+                "max": "6.828"
+            },
+            "major": {
+                "min": "7.142"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "BEFORE_PLATING",
+            "minor": {
+                "min": "6.464",
+                "max": "6.607"
+            },
+            "pitch": {
+                "min": "6.756",
+                "max": "6.833"
+            },
+            "major": {
+                "min": "7.155"
+            }
+        }
+    ],
+    "1/2-28 UNEF-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "minor": {
+                "min": "11.709",
+                "max": "11.938"
+            },
+            "pitch": {
+                "min": "12.111",
+                "max": "12.233"
+            },
+            "major": {
+                "min": "12.700"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "BEFORE_PLATING",
+            "minor": {
+                "min": "11.733",
+                "max": "11.953"
+            },
+            "pitch": {
+                "min": "12.157",
+                "max": "12.263"
+            },
+            "major": {
+                "min": "12.723"
+            }
+        }
+    ],
+    "11/16-24 UNEF-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "minor": {
+                "min": "16.307",
+                "max": "16.561"
+            },
+            "pitch": {
+                "min": "16.774",
+                "max": "16.906"
+            },
+            "major": {
+                "min": "17.463"
+            }
+        },
+        {
+            "type": "INNER",
+            "gauge": "BEFORE_PLATING",
+            "minor": {
+                "min": "16.330",
+                "max": "16.576"
+            },
+            "pitch": {
+                "min": "16.820",
+                "max": "16.885"
+            },
+            "major": {
+                "min": "17.488"
+            }
+        }
+    ],
+    "8-36 UNF-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "3.404",
+                "max": "3.596"
+            },
+            "pitch": {
+                "min": "3.709",
+                "max": "3.776"
+            },
+            "major": {
+                "min": "4.166"
+            }
+        }
+    ],
+    "12-36 UNS-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "4.725",
+                "max": "4.876"
+            },
+            "pitch": {
+                "min": "5.030",
+                "max": "5.128"
+            },
+            "major": {
+                "min": "5.487"
+            }
+        }
+    ],
+    "1-64 UNC-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "1.425",
+                "max": "1.582"
+            },
+            "pitch": {
+                "min": "1.598",
+                "max": "1.663"
+            },
+            "major": {
+                "min": "1.855"
+            }
+        }
+    ],
+    "0.8mm UNM-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "0.609",
+                "max": "0.684"
+            },
+            "pitch": {
+                "min": "0.671",
+                "max": "0.694"
+            },
+            "major": {
+                "min": "0.801"
+            }
+        }
+    ],
+    "5/16-28 UNF-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "6.782",
+                "max": "7.035"
+            },
+            "pitch": {
+                "min": "7.250",
+                "max": "7.371"
+            },
+            "major": {
+                "min": "7.938"
+            }
+        }
+    ],
+    "5-40 UNC-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "2.488",
+                "max": "2.697"
+            },
+            "pitch": {
+                "min": "2.765",
+                "max": "2.847"
+            },
+            "major": {
+                "min": "3.176"
+            }
+        }
+    ],
+    "8-32 UNC-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "3.303",
+                "max": "3.531"
+            },
+            "pitch": {
+                "min": "3.651",
+                "max": "3.746"
+            },
+            "major": {
+                "min": "4.167"
+            }
+        }
+    ],
+    "10-24 UNC-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "3.684",
+                "max": "3.962"
+            },
+            "pitch": {
+                "min": "4.139",
+                "max": "4.249"
+            },
+            "major": {
+                "min": "4.827"
+            }
+        }
+    ],
+    "12-24 UNC-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "4.344",
+                "max": "4.597"
+            },
+            "pitch": {
+                "min": "4.799",
+                "max": "4.910"
+            },
+            "major": {
+                "min": "5.487"
+            }
+        }
+    ],
+    "5/16-18 UNC-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "6.402",
+                "max": "6.731"
+            },
+            "pitch": {
+                "min": "7.022",
+                "max": "7.155"
+            },
+            "major": {
+                "min": "7.939"
+            }
+        }
+    ],
+    "5/16-24 UNF-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "6.783",
+                "max": "7.036"
+            },
+            "pitch": {
+                "min": "7.250",
+                "max": "7.371"
+            },
+            "major": {
+                "min": "7.939"
+            }
+        }
+    ],
+    "3/8-16 UNC-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "7.799",
+                "max": "8.153"
+            },
+            "pitch": {
+                "min": "8.495",
+                "max": "8.639"
+            },
+            "major": {
+                "min": "9.526"
+            }
+        }
+    ],
+    "8-64 UNS-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "3.736",
+                "max": "3.835"
+            },
+            "pitch": {
+                "min": "3.835",
+                "max": "3.891"
+            },
+            "major": {
+                "min": "4.166"
+            }
+        }
+    ],
+    "7/16-32 UN-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "10.340",
+                "max": "10.516"
+            },
+            "pitch": {
+                "min": "10.605",
+                "max": "10.693"
+            },
+            "major": {
+                "min": "11.113"
+            }
+        }
+    ],
+    "9/16-28 UN-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "13.312",
+                "max": "13.513"
+            },
+            "pitch": {
+                "min": "13.691",
+                "max": "13.785"
+            },
+            "major": {
+                "min": "14.288"
+            }
+        }
+    ],
+    "0.1510-56 UNS-2B": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "3.279",
+                "max": "3.391"
+            },
+            "pitch": {
+                "min": "3.531",
+                "max": "3.597"
+            },
+            "major": {
+                "min": "3.835"
+            }
+        }
+    ],
+    "M18X1.0": [
+        {
+            "type": "INNER",
+            "gauge": "NORMAL",
+            "customer": "OTHER",
+            "minor": {
+                "min": "16.917",
+                "max": "17.153"
+            },
+            "pitch": {
+                "min": "17.350",
+                "max": "17.510"
+            },
+            "major": {
+                "min": "18.000"
+            }
+        }
+    ]
+}
